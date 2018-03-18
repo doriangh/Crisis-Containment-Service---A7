@@ -1,0 +1,294 @@
+* {box-sizing: border-box;}
+
+
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    margin: 0px;
+    width: 100%;
+    min-height: 100%;
+    background-color: #70665c;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*Inceputul editarilor noastre */
+
+@font-face{
+	font-family: font_nou;
+	src:url("../font/love.ttf");
+}
+
+
+
+
+.container{
+	width: 90%;
+	margin: 0 auto;
+	line-height:normal;
+	line-height:28px;
+}
+
+header{
+	background-color:#70665c;
+	height: 50px;
+	width: 100%;
+}
+
+header h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+div img{
+	width: 100%;
+	height: 450px;
+}
+
+#poza{
+	width: 30%;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+nav{
+float: left;
+}
+
+nav ul{
+	margin-top:10px;
+}
+
+nav ul li{
+	display: inline-block;
+	margin-left: 300px;
+}
+
+a{
+	color:white;
+	text-decoration: none;
+}
+nav ul li a{
+	font-family: Arial;
+	font-size: 25px
+}
+
+.sectiune_text{
+	background-color: grey;
+	width: 100%;
+    height: 500px;
+
+}
+
+.sectiune_text h2{
+	text-align: center;
+	padding-bottom: 20px;
+	font-size: 70px;
+	font-family: font_nou;
+	letter-spacing: 2px;
+	font-weight: bold;
+	text-decoration:underline;
+}
+
+.sectiune_text p{
+	padding-left: 20px ;
+
+	font-size: 25px;
+	text-indent: 50px;
+	font-family: Arial;
+}
+
+#ingrosat{
+	font-weight: bold;
+	font-size: 30px;
+}
+.subpar h1{
+	padding-left:20px : 
+}
+
+.articole{
+width: 100%;
+background-color: yellow;
+padding:30px 0px;
+overflow: hidden;
+}
+.articole article{
+	width: 25%;
+	background-color: green;
+}
+
+
+.articole article h2{
+	text-align: center;
+	padding:10px,2px;
+}
+
+.subpar {
+    background-color:#856647;
+    color: white;
+    padding: 10px;
+
+} 
+.sectiune_text h3{
+	padding: 20px 20px;
+	font-size: 30px;
+}
+
+footer{
+	width: 100%;
+    height: 20px;
+	background-color: #70665c;
+	padding: 50px 0px;
+	text-align: center;
+	font-size: 15px;
+	color: white;
+    bottom: 0;
+
+}
+
+
+/*Dorian*/
+
+content{
+    width: 100%;
+    background-color: #70665c;
+
+}
+
+
+.topnav {
+    overflow: hidden;
+    background-color: #70665c;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: gray;
+    color: white;
+}
+
+
+
+
+.top {
+    display: inline-block;
+    position: relative;
+}
+
+.top-img {
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.responsive {
+    width: 100%;
+    height: 300px;
+    color: black;
+}
+
+.top-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 20%;
+    bottom: 0%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: black;
+    font: serif;
+}
+
+.main {
+    margin-top: 44px;
+}
+
+form {
+    margin-top: 5px;
+    margin-left: 780px;
+
+}
+
+.search {
+
+    padding: 8px 15px;
+    background: rgba(50, 50, 50, 0.2);
+    border: 0px solid #dbdbdb;
+}
+
+.button {
+    position: relative;
+    padding: 6px 15px;
+    left: -8px;
+    border: 2px solid #207cca;
+    background-color: #207cca;
+    color: #fafafa;
+}
+
+.button:hover {
+    background-color: #fafafa;
+    color: #207cca;
+}
+
+/**/
