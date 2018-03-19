@@ -60,10 +60,11 @@ table {
 @font-face{
 	font-family: font_nou;
 	src:url("../font/love.ttf");
+    
+    font-family: 'Calibri';
+    src: url("microsoft.com/typography/fonts/family.aspx");
+
 }
-
-
-
 
 .container{
 	width: 90%;
@@ -82,6 +83,7 @@ header h1 {
     text-align: center;
     color: antiquewhite;
     margin: 14px 0 14px 0;
+    font-family: Tahoma;
 }
 
 div img{
@@ -387,6 +389,7 @@ button {
 .articol {
     border: 5px solid #ccc;
     margin: 20px 20px 20px 20px;
+    background-color: white;
 }
 
 .articol hr {
@@ -396,6 +399,65 @@ button {
 .articol article{
     margin: 20px 20px 20px 20px;
     line-height: 25px;
+    background-color: white;
+    font-family: Tahoma;
+}
+
+.articol img {
+    height: auto;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: middle
+}
+
+.test-btn, test-button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align-last: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.test-btn:hover {
+    box-shadow: 0 8px 16px 0 rgba (0, 0, 0, 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.test-btn, .test-button {
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select: none;
+}
+
+.black-btn {
+    color: #fff!important;
+    background-color: #000!important;
+}
+
+.left-display-btn {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%, -50%);
+    -ms-transform:translate (-0%, -50%);
+}
+
+.right-display-btn {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate (-50%, 0%);
 }
 
 /**/
