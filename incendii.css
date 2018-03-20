@@ -68,9 +68,9 @@ header{
 	width: 100%;
 }
 
-#poza{
-	width: 100%;
-	height: auto;
+.poza{
+	width: 30%;
+	height: 30%;
 	padding-left: 10px;
 	padding-right: 10px;
 }
@@ -116,7 +116,7 @@ nav ul li a{
 .sectiune_text_pagina p{
 	padding-left: 20px ;
 
-	font-size: 25px;
+	font-size: 20px;
 	text-indent: 50px;
 	font-family: Arial;
 }
