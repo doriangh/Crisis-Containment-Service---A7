@@ -50,29 +50,29 @@ table {
 	src:url("../font/love.ttf");
 }
 
-.dot {
+.dot { /* Cerc */
   height: 15px;
   width: 15px;
-  background-color: #D2691E;
+  background-color: #70665c;
   border-radius: 50%;
   display: inline-block;
 }
 
-.container{
+.container_pagina{ /* Alinierea textului  */
 	width: 90%;
 	margin: 0 auto;
 	line-height:normal;
 	line-height:28px;
 }
 
-header{
+header{ /* Header cu backgroud */
 	background-color:#70665c;
 	height: 50px;
 	width: 100%;
 }
 
 
-#poza{
+#poza{ /* Pentru imagini  */
 	width: 30%;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -100,13 +100,13 @@ nav ul li a{
 	font-size: 25px
 }
 
-.sectiune_text{
+.sectiune_text_pagina{ /* Modificare aliniera textului */
 	background-color: grey;
 	width: 100%;
 	padding :50px 0px;
 }
 
-.sectiune_text h2{
+.sectiune_text_pagina h2{ /*  Modificarea headerului de tip 2 */
 	text-align: center;
 	padding-bottom: 20px;
 	font-size: 70px;
@@ -116,19 +116,19 @@ nav ul li a{
 	text-decoration:underline;
 }
 
-.sectiune_text p{
+.sectiune_text_pagina p{ /*  Modificarea textului in paragraf */
 	padding-left: 20px ;
 
 	font-size: 25px;
 	text-indent: 50px;
 	font-family: Arial;
 }
-
-#ingrosat{
+ 
+#ingrosat{ /* Pentru bold  */
 	font-weight: bold;
 	font-size: 30px;
 }
-.subpar h1{
+.subpar h1{ /* Modifica header de tip bold */
 	padding-left:20px : 
 }
 
@@ -149,18 +149,18 @@ overflow: hidden;
 	padding:10px,2px;
 }
 
-.subpar {
+.subpar { /* Modificare text */
     background-color:#856647;
     color: white;
     padding: 10px;
 
 } 
-.sectiune_text h3{
+.sectiune_text_pagina h3{ /* Modificare header de tip 3 */
 	padding: 20px 20px;
 	font-size: 30px;
 }
 
-footer{
+footer{ /* Footer */
 	width: 100%;
 	background-color: #70665c;
 	padding: 50px 0px;

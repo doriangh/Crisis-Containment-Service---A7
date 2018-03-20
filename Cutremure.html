@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
+		<head> <!-- Titlul -->
 	
 	<meta charset="utf-8">
 	<title>Cutremure</title>
 	<link rel="stylesheet" type="text/css" href="Cutremure.css">
+	<link rel="stylesheet" type="text/css" href="Style.css"> <!-- Folosec acest css pentru meniu -->
 	
-</head>
+		</head>
 <body>
-
-<div>
-	
-	<img src="CutremureTop2.jpg" alt="" style="width:100%;height:550px;">	
-
-<header>
  	
- 	<nav>
- 		<ul>
- 			<li ><a href="http://www.google.com">Acasa</a></li>
- 			<li><a href="http://www.google.com">Inundatii</a></li>
- 			<li><a href="http://www.google.com">Cutremure</a></li>
- 			<li><a href="inundatii.html" > Incendii</a></li>
- 			</ul>
- 	</nav>
- </header>
- </div>	
+ 	<div class="topnav"> <!-- Meniul cu link-uri pe alte pagini -->
+ 			<a href="index.html">Acasa</a>
+            <a href="inundatii.html">Inundatii</a>
+            <a class="active" href="Cutremure.html">Cutremure</a><!-- Cutremur este activ cand te aflii pe pagina Cutremure  -->
+            <a href="incendii.html">Incendii</a>
+            <a href="harta.html">Harta</a>
+            <a href="adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
+         
+            <form class="top-form"><!-- Butonul de cautare  -->
+                <input class="search" type="text" placeholder="Cauta..." required>
+                <input class="button-top" type="button" value="Cauta">
+            </form>
+ 	</div>
+
+ 	<div>
+ 			<img src="CutremureTop2.jpg" alt="Coverpic" style="width:100%;height:300px;"> <!-- Imaginea de sus -->
+ 	</div>
 
  <section>
-
- <div class="sectiune_text">
- 	<div class="container">
+ 			<header>
+    			<h1>Cutremure</h1>
+			</header>
+			<br>
+ <div class="sectiune_text_pagina"><!-- Pentru descriere text si paragraf  -->
+ 	<div class="container_pagina">
  		<br>
- 		<h2>Cutremurele</h2>
- 		<br><br>
- 		<h3 class="subpar">Ce sunt cutremurele ?</h3><br>
- 		<img id="poza" alt="" align="right" src="CutremureTop1.jpg" >
- 		<p>
+
+ 		<h3 class="subpar">Ce sunt cutremurele ?</h3><br><!-- Subparagraf  -->
+ 		<img id="poza" alt="" align="right" src="CutremureTop1.jpg" > <!-- Prima poza aliniata la dreapta --> 
+ 		<p> <!-- Paragrafe -->
  			Cutremur sau seism sunt termenii folosiți pentru mișcările pământului, ce constau în vibrații generate în zonele interne ale Terrei, propagate în formă de unde prin roci. Aceste vibrații rezultă din mișcările plăcilor tectonice,
  			fiind des cauzate de o activitate vulcanică.<br>
 			<br>&#160 &#160 &#160 &#160
@@ -45,36 +49,37 @@
 			<br><br>
  		</p>
 
- 		<h3 class="subpar">Originea cutremurelor</h3><br>
- 		<img id="poza" alt="" align="left" src="CutremureRight.png" >
- 		<p>
+ 		<h3 class="subpar">Originea cutremurelor</h3><br><!-- Subparagraf  -->
+ 		<img id="poza" alt="" align="left" src="CutremureRight.png" alt="" style="width:400px;height:400px;"><!-- Poza  -->
+ 		<p><!-- Paragraf  -->
  			Distribuția neuniformă a seismelor își găsește explicația în teoria plăcilor tectonice, conform căreia învelișul extern rigid al Pământului este format din 15 plăci tectonice mobile, de 60-100 km grosime, pe unele dintre carese află și continentele.<br>
  			<br>&#160 &#160 &#160 &#160
  			Aceste plăci litosferice plutesc pe astenosferă, stratul de suprafață semitopit al mantalei Pământului, și sub acțiunea curenților de convecție din manta se deplasează extrem de lent, cu o viteză de până la 12 cm pe an. <br>
  			<br>&#160 &#160 &#160 &#160
  			La marginile dintre plăci mișcarea este frânată de forța de frecare dintre ele, astfel că în aceste locuri se acumulează tensiuni enorme. Atunci când rocile care intră in contact se rup sau alunecă brusc, se produce o degajare sub formă de unde seismice a energiei acumulate, adică se produce cutremurul propriu-zis.
- 			<br><br><br>
- 		</p>
+ 			<br><br><br><br><br>
+ 		</p>	
 
- 		<h3 class="subpar">Producerea cutremurelor</h3><br>
- 		<img id="poza" alt="" align="left" src="CutremureRight1.jpg" style="width:520px;height:450px;" >
- 		<p>
+ 		<h3 class="subpar">Producerea cutremurelor</h3><br><!-- Subparagraf  -->
+ 		
+ 		<p><!-- Paragraf  -->
  			În momentul în care se declanșează cutremurul, din epicentru, adică din punctul situat deasupra vetrei cutremurului, vor porni unde de șoc. Primele valuri care vor porni se numesc unde primare sau unde P. Acestea sunt valuri longitudinale, care se propagă asemănător cu undele sonore: produc mișcări în sens înainte – înapoi, în direcția de propagare. Undele primare sunt urmate de undele secundare, sau undele S. Sub efectul acestora, rocile se vor zgudui perpendicular pe direcția de mers. Al treilea tip de unde, undele de suprafață, provoacă unduirea solului și accentuează efectul distrugător al undelor secundare .<br>
 			<br>&#160 &#160 &#160 &#160
-			Unda P : <br>&#160 &#160 &#160 &#160
-			<span class="dot"></span>
+			<strong>Unda P </strong>: <br>&#160 &#160 &#160 &#160 <!-- Strong text  -->
+			<span class="dot"></span> <!-- Pentru a pune un cerculet(dot) .  -->
 			este o undă longitudinală, de compresie<br>&#160 &#160 &#160 &#160
 			<span class="dot"></span>
 			determină mișcarea particulelor solului paralel cu direcția de propagare<br>&#160 &#160 &#160 &#160
 			<span class="dot"></span>
-			unda se deplasează prin compresie-dilatare în direcția de mers<br>&#160 &#160 &#160 &#160
+			unda se deplasează prin compresie-dilatare în direcția de mers
+			<img id="poza" alt="" align="right" src="CutremureRight1.jpg" style="width:520px;height:450px;" ><br>&#160 &#160 &#160 &#160<!-- Poza  -->
 			<span class="dot"></span>
 			amplitudinea acestei unde este direct proporțională cu magnitudinea (energia cutremurului)<br>&#160 &#160 &#160 &#160
 			<span class="dot"></span>
 			este percepută la suprafață de către oameni ca pe o săltare, un mic șoc în plan vertical<br>&#160 &#160 &#160 &#160
 			<span class="dot"></span>
 			nu este periculoasă pentru structuri (clădiri) deoarece conține (transportă) aproximativ 20% din energia totală a cutremurului<br><br>&#160 &#160 &#160 &#160
-			Unda S : <br>&#160 &#160 &#160 &#160
+			<strong>Unda S </strong>: <br>&#160 &#160 &#160 &#160
 			<span class="dot"></span>
 			este o undă transversală, de forfecare<br>&#160 &#160 &#160 &#160
 			<span class="dot"></span>
@@ -90,5 +95,14 @@
 			<span class="dot"></span>
 			clădirile cad datorită intrării în rezonanță a frecvenței proprii de oscilație a structurii clădirii cu frecvența undei incidente, în acest caz efectul distructiv fiind puternic amplificat .<br>&#160 &#160 &#160 &#160
  		</p>
+ 	</div>
+ </div>
+ </div>
+
+ 	<footer> <!-- Footer  -->
+ 		<h1><u>COPYRIGHT @copy: Tehnologii Web</u></h1>
+ 	</footer>
+
+    </div>
 </body>
 </html>
