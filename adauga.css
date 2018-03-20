@@ -2,22 +2,27 @@
     box-sizing: border-box;
 }
 
-html{
-    background-image: url(catastrofa1.jpg);
+html {
+    height: 100%;
+    background-image: url(rain-bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-
+    background-size:auto ;
+    background-color: #A9CADF;
+    
 }
 
-
-backgroung-image {
-    filter: blur(5px);
+.bg {
+    background-image: url(rain-bg.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
 }
 
 form {
-    margin-top: 50%;
-    margin-bottom: 50%;
+    margin-top: 10%;
+    margin-bottom: 10%;
     margin-left: 20%;
     margin-right: 20%;
     width: auto;
@@ -41,6 +46,7 @@ input [type=text]:focus {
 hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
+    margin: 0px 20px 25px 20px;
 }
 
 .input {
@@ -96,4 +102,8 @@ button:hover {
 }
 .container {
     text-align: center;
+}
+
+.container h1 {
+    padding: 12px 12px 0px 12px;
 }
