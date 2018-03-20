@@ -19,7 +19,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -68,11 +68,28 @@ header{
 	width: 100%;
 }
 
-.poza{
+header p {
+    font-size: 50px;
+    text-align: center;
+    color: antiquewhite;
+    margin: 14px 0 14px 0;
+    font-family: Tahoma;
+}
+
+.poza1{
+	width: 30%;
+	height: 30%;
+	padding-left: 10px;
+	padding-right: 10px;	
+	float: left;
+}
+
+.poza2{
 	width: 30%;
 	height: 30%;
 	padding-left: 10px;
 	padding-right: 10px;
+	float: right;
 }
 
 nav{
@@ -121,12 +138,12 @@ nav ul li a{
 	font-family: Arial;
 }
 
-#ingrosat{
+.ingrosat{
 	font-weight: bold;
 	font-size: 30px;
 }
 .subpar h1{
-	padding-left:20px : 
+	padding-left:20px;
 }
 
 .articole{
@@ -143,7 +160,7 @@ overflow: hidden;
 
 .articole article h2{
 	text-align: center;
-	padding:10px,2px;
+	padding: 10px 2px;
 }
 
 .subpar {
