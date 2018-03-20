@@ -6,6 +6,8 @@ html {
     height: 100%;
     width: 100%;
 }
+
+/*Resetarea codului CSS*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -51,22 +53,17 @@ table {
 }
 
 
-/*Inceputul editarilor css*/
+/*Inceputul editarilor css dupa resetare*/
 
-
-.container_pagina{
-	width: 90%;
-	margin: 0 auto;
-	line-height:normal;
-	line-height:28px;
-}
-
+/*  */
 header{
 	background-color:#70665c;
 	height: 50px;
 	width: 100%;
 }
 
+
+/* Editarea textului de titlu */
 header p {
     font-size: 50px;
     text-align: center;
@@ -76,41 +73,22 @@ header p {
 }
 
 
-
-.banner{
-	width: 100%;
-	height: 300px;
-}
-
-.poza1{
-	width: 40%;
-	padding-left: 20px;
-	padding-right: 20px;
-	float: left;
-}
-
-.poza2{
-	width: 40%;
-	padding-left: 20px;
-	padding-right: 20px;
-	float: right;
-}
+/* Editarea incadrarii in pagina si a caracteristicilor spatiului de text */
 .sectiune_text_pagina{
 	background-color: grey;
 	width: 100%;
 	padding :50px 0px;
 }
 
-.sectiune_text_pagina h2{
-	text-align: center;
-	padding-bottom: 20px;
-	font-size: 70px;
-	font-family: font_nou;
-	letter-spacing: 2px;
-	font-weight: bold;
-	text-decoration:underline;
+/* Incadrarea in pagina a pozelor si textului */
+.container_pagina{
+	width: 90%;
+	margin: 0 auto;
+	line-height:normal;
+	line-height:28px;
 }
 
+/* Editarea distantei,marimii si a font-ului textului din paragrafe */
 .sectiune_text_pagina p{
 	padding-left: 20px ;
 
@@ -119,11 +97,13 @@ header p {
 	font-family: Arial;
 }
 
-.ingrosat{
-	font-weight: bold;
+
+/* Editarea textului subtitlurilor paginii(Cauza,Efecte,Prevenire) */
+.sectiune_text_pagina h3{
+	padding: 20px 20px;
 	font-size: 30px;
 }
-
+/* Editarea spatiului de subtitlu a paginii(Cauza,Efecte,Prevenire) */
 .header_art {
     background-color:#856647;
     color: white;
@@ -131,35 +111,33 @@ header p {
     font-size: 30px;
 }
 
-.header_art h3{
-	padding-left:20px ; 
+
+
+/* Ingrosarea liniilor puse in aceasta clasa (Subpunctele de la Cauze) */
+.ingrosat{
+	font-weight: bold;
 	font-size: 30px;
 }
 
-.articole{
-width: 100%;
-background-color: yellow;
-padding:30px 0px;
-overflow: hidden;
-}
-.articole article{
-	width: 25%;
-	background-color: green;
+
+/* Asezarea pozelor pe partea stanga a paginii */
+.poza1{
+	width: 40%;
+	padding-left: 20px;
+	padding-right: 20px;
+	float: left;
 }
 
-
-.articole article h2{
-	text-align: center;
-	padding:10px 2px;
+/* Asezarea pozelor pe partea dreapta a paginii */
+.poza2{
+	width: 40%;
+	padding-left: 20px;
+	padding-right: 20px;
+	float: right;
 }
 
 
-
-.sectiune_text h3{
-	padding: 20px 20px;
-	font-size: 30px;
-}
-
+/* Editarea footer-ului */
 footer{
     width: 100%;
     height: 20px;
