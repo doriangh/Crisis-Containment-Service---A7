@@ -5,7 +5,7 @@
 	<title>CriC</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="slide-show.js"></script>
-	
+    
 </head>
 <body>
     
@@ -17,9 +17,9 @@
             <a href="harta.html">Harta</a>
             <a href="adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
          
-            <form class="top-form">
-                <input class="search" type="text" placeholder="Cauta..." required>
-                <input class="button-top" type="submit" value="Cauta">
+            <form id="searchBtn" class="top-form">
+                <input id="textSearch" class="search" type="text" placeholder="Cauta..." required>
+                <input  class="button-top" type="submit" value="Cauta">
             </form>
         </div>
     
@@ -120,6 +120,19 @@
  	</footer>
 
     </div>
+    
+    
+    <script>
+    
+         document.getElementById('searchBtn').onsubmit = function() {
+            
+                window.location = document.getElementById('textSearch').value + '.html';
+
+                return false;
+        }
+    
+    
+    </script>
 
     
 </body>
