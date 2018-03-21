@@ -23,9 +23,8 @@
                 <input class="button-top" type="button" value="Cauta">
             </form>
         </div>
-      
 <div class="main">
-    
+    <hr>
     <header>
         <h1>Harta</h1>
     </header>
@@ -37,12 +36,12 @@
     <script>
       var map, infoWindow;
       function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
+        var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 47.1739724, lng: 27.5749111},
           zoom: 10
         });
+          
         infoWindow = new google.maps.InfoWindow;
-
 
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
@@ -52,9 +51,8 @@
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Sunteti aici.');
+            infoWindow.setContent('Va aflati aici.');
             infoWindow.open(map);
-            map.setCenter(pos);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
@@ -62,6 +60,25 @@
 
           handleLocationError(false, infoWindow, map.getCenter());
         }
+          
+          var continut = 'Hello!';
+          
+          var pozitie = {
+              lat: 47.1650759,
+              lng: 27.5817583
+          }
+          
+           var marker = new google.maps.Marker({
+            position: pozitie, 
+            map: map,
+            title: 'Testing markers!'
+            
+        });
+          marker.addListener ('click', function() {
+            infoWindow.open(map, marker);
+        });
+          
+          
       }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -71,6 +88,8 @@
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
+      
+        
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA43_YU5c2vAR-_xUelUAoMIiRPI42ByNU&callback=initMap">
