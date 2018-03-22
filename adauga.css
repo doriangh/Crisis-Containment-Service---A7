@@ -79,12 +79,11 @@ button:hover {
 }
 
 .cancelbtn, .adaugabtn {
-    float: center;
     width: 60%;
 }
 
-.containter {
-    padding: 16px;
+.container {
+    text-align: center;
 }
 
 .clearfix::after{
@@ -100,10 +99,8 @@ button:hover {
     }
     
 }
-.container {
-    text-align: center;
-}
 
 .container h1 {
     padding: 12px 12px 0px 12px;
 }
+

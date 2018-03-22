@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 <head>
 	<meta charset="utf-8" content="width=device-width, initial-scale=1">
 	<title>CriC</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="slide-show.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+    
     
 </head>
 <body>
@@ -18,8 +20,8 @@
             <a href="adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
          
             <form id="searchBtn" class="top-form">
-                <input id="textSearch" class="search" type="text" placeholder="Cauta..." required>
-                <input  class="button-top" type="submit" value="Cauta">
+                <input id="textSearch" class="search" type="text" placeholder="Cauta Oras..." required >
+                <input class="button-top" type="submit" value="Cauta">
             </form>
         </div>
     
@@ -27,7 +29,7 @@
     
 <!--Imagine sus -->
 <div class="top">
-        <img src="top-image.jpg" class="responsive">
+        <img src="top-image.jpg" alt="Pamantul" class="responsive">
 </div>
     
 <header>
@@ -45,7 +47,7 @@
              <h3>Padure</h3>
          <hr>
              <br>
-            <img src="padure.jpg">
+            <img src="padure.jpg" alt="padure">
 
              <p>
             Lorem ipsum dolor sit amet, id tamquam persius prompta eam, sint scriptorem ad vix. Eu dicunt utroque facilisis eam, vis enim epicurei voluptatibus eu. Ornatus iracundia quo in. In ceteros forensibus necessitatibus mei, duo ad periculis molestiae persequeris. <br> <br>
@@ -69,7 +71,7 @@
          <hr>
              <br>
              
-            <img src="lac.jpg"> 
+            <img src="lac.jpg" alt="lac"> 
              <p>
             Aici avem exemplu de un aparat de cafea  <br> <br>
              
@@ -123,16 +125,63 @@
     
     
     <script>
+        function initialize() {
+            var input = document.getElementById('textSearch');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+        }
+        
+        google.maps.event.addDomListener(window, 'load', initialize);
+        
+        function getGeometry() {
+            
+            var place = autocomplete.getPlace();
+            
+            var lat = place.geometry.location.lat();
+            var lng = place.geometry.location.lng();
+        
+        }
+        
+        
+        
+//        autocomplete.addListener('place_changed', function() {
+//            
+//            var place = autocomplete.getPlace();
+//            if (!place.geometry) {
+//                window.alert ("No details available for input: '" + place.name + "'");
+//                return;
+//            }
+//            
+//            if (place.geometry.viewport) {
+//                map.fitBounds(place.geometry.viewport);
+//            } else {
+//                map.setCenter (place.geometry.location);
+//                map.setZoom(17);
+//            }
+//            
+//            marker.setPosition (place.geometry.location);
+//            marker.setVisible(true);
+//            
+//            }
+//            
+//        });
+        
+      
+    </script>
+    
+    
+<!--
+    <script>
     
          document.getElementById('searchBtn').onsubmit = function() {
             
-                window.location = document.getElementById('textSearch').value + '.html';
+                window.location = document.getElementById('textSearch').value.toLowerCase() + '.html';
 
                 return false;
         }
     
     
     </script>
+-->
 
     
 </body>
