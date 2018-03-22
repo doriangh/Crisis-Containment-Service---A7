@@ -72,29 +72,58 @@ header p {
     font-family: Tahoma;
 }
 
+/* Alinierea textului  */
+.container_pagina{ 
+	border: 5px solid #ccc;
+    margin: 20px 150px;
+    background-color: white;
+}
+
+/* Marginile textului alaturi de aliniere  si de background pentru text si font */
+.container_pagina article{ 
+    margin: 40px 30px 30px 30px;
+    line-height: 35px;
+    background-color: white;
+    font-family: Tahoma;
+}
+
+@media screen and (max-width: 1000px){
+    .container_pagina {
+        margin: 20px 20px 20px 20px;
+    }
+}
+
+/* Font si alinierae si marginea pentru paragrafe */
+.container_pagina p { 
+    font-size: 18px;
+    margin-top: 60px;
+    font-family: Tahoma;
+    text-align: left;
+}
+
+ /* Pentru o linie orizontala */
+.container_pagina hr {
+    
+    margin: 0 20px 0 20px;
+}
 
 /* Editarea incadrarii in pagina si a caracteristicilor spatiului de text */
 .sectiune_text_pagina{
 	background-color: grey;
 	width: 100%;
-	padding :50px 0px;
+    height: auto;
 }
 
-/* Incadrarea in pagina a pozelor si textului */
-.container_pagina{
-	width: 90%;
-	margin: 0 auto;
-	line-height:normal;
-	line-height:28px;
-}
+
 
 /* Editarea distantei,marimii si a font-ului textului din paragrafe */
 .sectiune_text_pagina p{
-	padding-left: 20px ;
-
-	font-size: 20px;
-	text-indent: 50px;
-	font-family: Arial;
+	margin: auto;
+    width: 100%;
+    line-height: 2;
+    text-indent: 40px;
+	font-size: 18px;
+	font-family: Tahoma;
 }
 
 
@@ -119,34 +148,42 @@ header p {
 	font-size: 30px;
 }
 
+/* Header de tip 3 */
+.header_art h3{ 
+	padding-left:20px ; 
+	font-size: 30px;
+}
 
 /* Asezarea pozelor pe partea stanga a paginii */
 .poza1{
-	width: 40%;
-	padding-left: 20px;
-	padding-right: 20px;
-	float: left;
+	width: auto;
+	max-width: 40%;
+	height: auto;
+	max-height: 40%;
+	padding-left: 10px;
+	padding-right: 10px;
+	float:left;
 }
 
 /* Asezarea pozelor pe partea dreapta a paginii */
 .poza2{
-	width: 40%;
-	padding-left: 20px;
-	padding-right: 20px;
-	float: right;
+	width: auto;
+	max-width: 40%;
+	height: auto;
+	max-height: 40%;
+	padding-left: 10px;
+	padding-right: 10px;
+	float:right;
 }
 
 
 /* Editarea footer-ului */
 footer{
     width: 100%;
-    height: 20px;
-    background-color: #70665c;
-    padding: 50px 0px;
-    text-align: center;
-    font-size: 15px;
-    color: white;
-    bottom: 0;
-
+	background-color: #70665c;
+	padding: 50px 0px;
+	text-align: center;
+	font-size: 15px;
+	color: white;
 }
 
