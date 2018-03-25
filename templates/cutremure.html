@@ -4,30 +4,33 @@
 	
 	<meta charset="utf-8">
 	<title>CriC</title>
-	<link rel="stylesheet" type="text/css" href="Cutremure.css">
-	<link rel="stylesheet" type="text/css" href="Style.css"> <!-- Folosec acest css pentru meniu -->
+	<link rel="stylesheet" type="text/css" href="../styles/cutremure.css">
+	<link rel="stylesheet" type="text/css" href="../styles/style.css"> <!-- Folosec acest css pentru meniu -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+            
 	
 		</head>
 <body>
  	
  	<div class="topnav"> <!-- Meniul cu link-uri pe alte pagini -->
- 			<a href="index.html">Acasa</a>
-            <a href="inundatii.html">Inundatii</a>
-            <a class="active" href="Cutremure.html">Cutremure</a><!-- Cutremur este activ cand te aflii pe pagina Cutremure  -->
-            <a href="incendii.html">Incendii</a>
-            <a href="harta.html">Harta</a>
-            <a href="adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
+ 			<a href="../templates/index.html">Acasa</a>
+            <a href="../templates/inundatii.html">Inundatii</a>
+            <a class="active" href="../templates/cutremure.html">Cutremure</a><!-- Cutremur este activ cand te aflii pe pagina Cutremure  -->
+            <a href="../templates/incendii.html">Incendii</a>
+            <a href="../templates/harta.html">Harta</a>
+            <a href="../templates/adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
          
-            <form class="top-form"><!-- Butonul de cautare  -->
-                <input class="search" type="text" placeholder="Cauta..." required>
-                <input class="button-top" type="button" value="Cauta">
+            <form id="searchBtn" class="top-form">
+                <input id="textSearch" class="search" type="text" placeholder="Cauta Oras..." required >
+                <input class="button-top" type="submit" value="Cauta">
+                <script src="../scripts/search-autocomplete.js" defer></script>
             </form>
  	</div>
 
 <div class="main"> <!--Clasa main pentru margine sus-->
 
  	<div class="top"> <!-- Pentru a pune imaginea in top -->
- 			<img src="CutremureTop2.jpg" class="responsive" alt="P1"> <!-- Imaginea de sus -->
+ 			<img src="../images/CutremureTop2.jpg" class="responsive" alt="P1"> <!-- Imaginea de sus -->
  	</div>
 
  			<header>
@@ -43,7 +46,7 @@
  		<h3 class="header_art">Ce sunt cutremurele ?</h3><!-- Subparagraf  -->
  		<br>
  		<div class="pozaRight">
- 			<img src="CutremureTop1.jpg" alt="P1"> <!-- Prima poza aliniata la dreapta --> 
+ 			<img src="../images/CutremureTop1.jpg" alt="P1"> <!-- Prima poza aliniata la dreapta --> 
  		</div>
  		<br>
  		<p> <!-- Paragrafe -->
@@ -59,7 +62,7 @@
  		<h3 class="header_art">Originea cutremurelor</h3><!-- Subparagraf  -->
  		<br>
  		<div class="pozaLeft">
- 			<img src="cutremurdreapta.png" alt="P2"><!-- Poza  -->
+ 			<img src="../images/cutremurdreapta.png" alt="P2"><!-- Poza  -->
  		</div>
  		<br><br><br>
  		<p><!-- Paragraf  -->
@@ -77,7 +80,7 @@
  			În momentul în care se declanșează cutremurul, din epicentru, adică din punctul situat deasupra vetrei cutremurului, vor porni unde de șoc. Primele valuri care vor porni se numesc unde primare sau unde P. Acestea sunt valuri longitudinale, care se propagă asemănător cu undele sonore: produc mișcări în sens înainte – înapoi, în direcția de propagare. Undele primare sunt urmate de undele secundare, sau undele S. Sub efectul acestora, rocile se vor zgudui perpendicular pe direcția de mers. Al treilea tip de unde, undele de suprafață, provoacă unduirea solului și accentuează efectul distrugător al undelor secundare .
 			</p>
 			<div class="pozaRight">
-				<img src="CutremureRight1.jpg" alt="P3"></div><p>
+				<img src="../images/CutremureRight1.jpg" alt="P3"></div><p>
 			Unda P : </p><p>
 			<span class="dot"></span> <!-- Pentru a pune un cerculet(dot) .  -->
 			este o undă longitudinală, de compresie</p><p>

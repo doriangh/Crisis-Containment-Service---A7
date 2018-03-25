@@ -1,40 +1,27 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>CriC</title>
-    <meta charset="utf-8" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-      <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="harta.css">
-
-  </head>
-  <body>
-      
-      <div class="topnav">
-            <a href="index.html">Acasa</a>
-            <a href="inundatii.html">Inundatii</a>
-            <a href="Cutremure.html">Cutremure</a>
-            <a href="incendii.html">Incendii</a>
-            <a class="active" href="harta.html">Harta</a>
-            <a href="adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
-         
-            <form class="top-form">
-                <input class="search" type="text" placeholder="Cauta..." required>
-                <input class="button-top" type="button" value="Cauta">
-            </form>
-        </div>
-<div class="main">
-    <hr>
-    <header>
-        <h1>Harta</h1>
-    </header>
-      
-<div class="sectiune_text">
-
+document.addEventListener('DOMContentLoaded', function() {
     
-    <div id="map"></div>
-    <script>
-      var map, infoWindow;
+   if (document.querySelectorAll('#map').length > 0){
+       
+       if (document.querySelector('html').lang)
+           lang = document.querySelector('html').lang;
+       else
+           lang = 'en';
+   
+    
+    var js_file = document.createElement('script');
+    js_file.type = 'text/javascript';
+    js_file.src = 'https://maps.googleapis.com/maps/api/js?callback=initMap&signed_in=true&language=' + lang;
+    document.getElementsByTagName('head')[0].appendChild(js_file);
+
+   }
+});
+
+var js_file = document.createElement('script');
+js_file.type = 'text/javascript';
+js_file.src = 'https://maps.googleapis.com/maps/api/js?callback=initMap&signed_in=true&key=AIzaSyA43_YU5c2vAR-_xUelUAoMIiRPI42ByNU&language=' + lang;
+document.getElementsByTagName('head')[0].appendChild(js_file);
+
+var map, infoWindow;
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 47.1739724, lng: 27.5749111},
@@ -89,20 +76,3 @@
         infoWindow.open(map);
       }
       
-        
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA43_YU5c2vAR-_xUelUAoMIiRPI42ByNU&callback=initMap">
-    </script>
-    
-    
-
-      </div>
-      </div>
-    
-      <footer>
-        <h1><u>&copy;Tehnologii Web</u></h1>
-      </footer>
-      
-  </body>
-</html>

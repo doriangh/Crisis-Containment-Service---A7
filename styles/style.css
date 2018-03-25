@@ -16,6 +16,7 @@ body {
 }
 
 
+/*Titlul Paginii*/
 header h1 {
     font-size: 50px;
     text-align: center;
@@ -83,6 +84,7 @@ footer h1 {
     font-weight: 100;
 }
 
+/*blocul de text*/
 content{
     width: 100%;
     background-color: #70665c;
@@ -185,7 +187,7 @@ content{
     color: black;
     font: serif;
 }
-/*/Banner*/
+
 
 /*Setata pagina mai jos pentru a nu taia banner-ul*/
 .main {
@@ -199,6 +201,7 @@ content{
     
 }
 
+/*Bara de search*/
 .search {
     padding: 8px 14px;
     background: rgba(50, 50, 50, 0.2);
@@ -208,6 +211,7 @@ content{
     top: 5px;
 }
 
+/*Butonul "Cauta"*/
 .button {
     position: relative;
     padding: 6px 15px;
