@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html>
   <head>
-    <title>CriC</title>
-    <meta charset="utf-8" content="width=device-width, initial-scale=1">
+    <title>Geocoding service</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+      
+     <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <link rel="stylesheet" type="text/css" href="../styles/harta.css">
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
-      
   </head>
+    
   <body>
-      
       <div class="topnav">
             <a href="../templates/index.html">Acasa</a>
             <a href="../templates/inundatii.html">Inundatii</a>
             <a href="../templates/cutremure.html">Cutremure</a>
             <a href="../templates/incendii.html">Incendii</a>
-            <a class="active" href="../templates/harta.html">Harta</a>
+            <a href="../templates/harta.html">Harta</a>
             <a href="../templates/adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
          
             <form id="searchBtn" class="top-form">
@@ -25,24 +24,30 @@
                 <script src="../scripts/search-autocomplete.js" defer></script>
             </form>
         </div>
-<div class="main">
-    <hr>
-    <header>
-        <h1>Harta</h1>
-        
-    </header>
       
-<div class="sectiune_text">
+        <div class="main">    
+        <hr>
 
+            <header>
+            
+                <h1>Search Map</h1>
+            
+            </header>
 
-    <div id="map"></div>
-    <script src="../scripts/map.js" defer></script>
-    
-  </div>
-      </div>
-    
+            <div class="sectiune_text">
+
+                <div id="map"></div>
+                <script src="../scripts/geolocation.js"></script>
+
+            </div>
+            
+        </div>
+      
+      
       <footer>
+          
         <h1><u>&copy;Tehnologii Web</u></h1>
+      
       </footer>
       
   </body>

@@ -5,8 +5,11 @@
     <meta charset="utf-8" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
-    <link rel="stylesheet" type="text/css" href="../styles/harta.css">
+    <link rel="stylesheet" type="text/css" href="../testing/harta.css">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+      <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBN8YuZkSbvy9f-SXuV5knoJRCOKxJ6WHw&callback=initMap">
+    </script>
       
   </head>
   <body>
@@ -28,15 +31,27 @@
 <div class="main">
     <hr>
     <header>
-        <h1>Harta</h1>
+        <h1 id="header">Harta</h1>
+
+        <script>
+            var query = window.location.search;
+            var data = query.split('=');
+            var words = data[1].split('+');
+            document.getElementById('header').innerHTML = words;
+        
+        </script>
         
     </header>
       
 <div class="sectiune_text">
 
 
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map"></div>
-    <script src="../scripts/map.js" defer></script>
+    <script src="../testing/map.js" defer></script>
+    
+  
+    
     
   </div>
       </div>
