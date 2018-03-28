@@ -10,7 +10,10 @@ https://support.google.com/fusiontables/answer/2571232
 http://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2.html
 https://microservices.io/
 
-Limbaje Obligatorii:
+Limbaje Utilizate Front-End:
 - HTML
 - CSS
 - JavaScript
+
+Limbaje Utilizate Back-End:
+- PHP
