@@ -17,3 +17,4 @@ Limbaje Utilizate Front-End:
 
 Limbaje Utilizate Back-End:
 - PHP
+- JSON
