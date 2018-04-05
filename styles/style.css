@@ -60,7 +60,7 @@ div img{
 }
 
 .sectiune_text h3{
-	padding: 20px 20px;
+	padding: 20px 0 0 0;
 	font-size: 30px;
 
 }
@@ -295,8 +295,8 @@ button {
     
     width: 200%;
     font-size: 20px;
-    text-align: center;
-    
+
+
 }
 
 .clearfix::after{
@@ -366,7 +366,16 @@ button {
     font-size: 18px;
     margin-top: 60px;
     font-family: Tahoma;
+  
+}
+
+.articol h6 {
+    
+    font-size: 12px;
+    margin-top: 0px;
+    font-family: Tahoma;
     text-align: left;
+    font-weight: 100;
 }
 
 .test-btn, test-button {

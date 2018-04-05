@@ -5,12 +5,13 @@
         <title>Adauga Eveniment</title>
         <link rel="stylesheet" type="text/css" href="../styles/adauga.css">
         
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBN8YuZkSbvy9f-SXuV5knoJRCOKxJ6WHw&libraries=places"></script>
         
     </head>
     
 <body>
     
-    <a href="../templates/index.html"><button type="button" style="background-color: red;"> Inapoi
+    <a href="../templates/index.php"><button type="button" style="background-color: red;"> Inapoi
     </button>
     </a>
     
@@ -26,16 +27,20 @@
             <input id="prenume" class="input" type="text" placeholder="Prenume" name="prenume" required>
             <br>
             
-            <input id="adresa" class="input" type="text" placeholder="Adresa" name="adresa" required>
+            <script type="text/javascript" src="../scripts/search-autocomplete.js"></script>
             
-            <input id="oras"class="input" type="text" placeholder="Oras" name="oras" required>
+            <input id="adresa" class="input" type="text" placeholder="Locatie" name="adresa" autocomplete="off" required>
+            
             
             <input id="sesizari" class="input" type="text" placeholder="Sesizari" name="sesizari" required>
             
-            <input id="descriere" class="input" type="text" placeholder="Descriere" name="descriere" style="height: 100px;" required>
+<!--            <input id="descriere" class="input" type="text" placeholder="Descriere" name="descriere" style="height: 100px;" required>-->
+            
+            <textarea id="descriere" rows="5" class="input" type="text" placeholder="Descriere" name="descriere" style="resize: none" required></textarea>
+            
             
             <br>
-            <input type="file" id="imagini" name="imagini" accept=".jpg, .jpeg, .png" multiple>
+            <input type="file" id="imagini" name="imagine" accept=".jpg, .jpeg, .png">
             <br>
             <br>
             

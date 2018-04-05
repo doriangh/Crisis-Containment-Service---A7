@@ -1,6 +1,6 @@
 <?php
 
-    $db = mysqli_connect ("localhost", "root", "PAROLA_TA_AICI", "CriC");
+    $db = mysqli_connect ("localhost", "root", "59885236", "CriC");
     
     if (!$db) {
         die ("Connection failed: " . mysqli_connect_error());

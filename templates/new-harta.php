@@ -28,7 +28,6 @@
 <div class="main">
     <hr>
     <header>
-        <h1>Harta</h1>
         
     </header>
       
@@ -36,7 +35,7 @@
 
 
     <div id="map"></div>
-    <script src="../scripts/map.js" defer></script>
+    <script src="../scripts/new-map.js" defer></script>
     
   </div>
       </div>
@@ -46,4 +45,64 @@
       </footer>
       
   </body>
+    
+    
+    <?php
+    
+    
+     session_start();
+    
+    $db = mysqli_connect ("localhost", "root", "59885236", "CriC");
+    
+    if (!$db) {
+        die ("Connection failed: " . mysqli_connect_error());
+    } else {
+        echo('Success');
+    }
+
+    
+    $sql = "select * from form";
+
+        $intro = "eqfeed_callback(";
+        $outro = ")";
+        $address = array();
+    
+        $coord = array();
+        $geometry = array();
+        $response = array();
+        $features = array();
+    
+        $result = mysqli_query($db, $sql); 
+    
+    while ($row = mysqli_fetch_array($result)) {
+        $latitude = $row['latitude'];
+        $longitude = $row['longitude'];
+        $oras = $row['adresa'];
+        $sesizare = $row['sesizari'];
+        $descriere = $row['descriere'];
+        
+        
+        $coords = array((float)$longitude, (float)$latitude);
+        
+        if ($longitude && $latitude){
+            
+            $features = array('coordinates' => $coords, 'id' => $oras, 'sesizare' => $sesizare, 'descriere' => $descriere);
+            
+            $geometry[] = array('geometry' => $features);
+            
+        }
+        
+        $response = array('features' => $geometry);
+        
+}
+
+    $fp = fopen ('../datafile/oras.js', 'w');
+    fwrite($fp, $intro);
+    fwrite($fp, json_encode($response));
+    fwrite($fp, $outro);
+    fclose($fp);
+
+
+?>
+    
 </html>
