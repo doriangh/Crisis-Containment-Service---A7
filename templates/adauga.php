@@ -2,7 +2,7 @@
 
  session_start();
     
-    $db = mysqli_connect ("localhost", "root", "59885236", "CriC");
+    $db = mysqli_connect ("golar3.go.ro", "tw", "59885236", "CriC");
     
     if (!$db) {
         die ("Connection failed: " . mysqli_connect_error());
@@ -51,7 +51,7 @@
 
         $nume = ($_POST['nume']);
         $prenume = ($_POST['prenume']);
-        $oras = ($_POST['oras']);
+//        $oras = ($_POST['oras']);
         $sesizari = ($_POST['sesizari']);
         $descriere = ($_POST['descriere']);
         //$director = addslashes (file_get_contents($_FILES['imagine']['tmp_name']));
@@ -68,10 +68,10 @@
     
     }
 
-    echo $latitude . $longitude . $address . $oras . $nume;
+//    echo $latitude . $longitude . $address . $nume;
 
 
-    $sql = "INSERT INTO form (nume, prenume, adresa, oras, sesizari, descriere, latitude, longitude) VALUES ('$nume', '$prenume', '$data_arr[2]', '$oras', '$sesizari', '$descriere',  '$data_arr[0]', '$data_arr[1]')";
+    $sql = "INSERT INTO form (nume, prenume, adresa, sesizari, descriere, latitude, longitude) VALUES ('$nume', '$prenume', '$data_arr[2]', '$sesizari', '$descriere',  '$data_arr[0]', '$data_arr[1]')";
 
     mysqli_query ($db, $sql);
 

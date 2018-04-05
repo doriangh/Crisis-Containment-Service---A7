@@ -21,9 +21,9 @@
             <a href="../templates/adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
          
             <form id="searchBtn" class="top-form" action="../templates/search-map.html" method="GET">
-                <input id="textSearch" class="search" type="text" name="city" placeholder="Cauta Oras..." required >
+                <input id="adresa" class="search" type="text" name="city" placeholder="Cauta Oras..." required >
                 <input class="button-top" type="submit" value="Cauta">
-                
+               
 
         
             </form>
@@ -51,7 +51,9 @@
 
 session_start();
     
-    $db = mysqli_connect ("localhost", "root", "59885236", "CriC");
+//    $db = mysqli_connect ("localhost", "root", "59885236", "CriC");
+         
+    $db = mysqli_connect ("golar3.go.ro", "tw", "59885236", "CriC");
     
     if (!$db) {
         die ("<p style=\"background-color: red;color:white;\">Connection failed: " . mysqli_connect_error() . "</p> <br>");
