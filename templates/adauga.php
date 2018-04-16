@@ -71,6 +71,7 @@
 //    echo $latitude . $longitude . $address . $nume;
 
 
+    if ($latitude != 0 || $longitude != 0){
     $sql = "INSERT INTO form (nume, prenume, adresa, sesizari, descriere, latitude, longitude) VALUES ('$nume', '$prenume', '$data_arr[2]', '$sesizari', '$descriere',  '$data_arr[0]', '$data_arr[1]')";
 
     mysqli_query ($db, $sql);
@@ -78,6 +79,12 @@
 
 
     header ('Location: ../templates/index.php');
+    } else {
+        
+        echo "<script> alert('Locatie incorecta');
+                window.location.href='../templates/adauga.html'</script>";
+        
+    }
     
 
 ?>

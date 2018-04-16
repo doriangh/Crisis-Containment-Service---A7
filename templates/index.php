@@ -4,10 +4,18 @@
 	<meta charset="utf-8" content="width=device-width, initial-scale=1">
 	<title>CriC</title>
 	<link rel="stylesheet" type="text/css" href="../styles/style.css">
-<!--    <script src="../scripts/search-autocomplete.js" type="text/javascript"></script>-->
+
     <script src="../scripts/slide-show.js" type="text/javascript"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
     
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <meta name="google-signin-client_id" content="580134955331-dsvnpsi07grklncod32u8cj2j13hm826.apps.googleusercontent.com"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <script src="https://apis.google.com/js/api:client.js"></script>
+    
+    <script type="text/javascript" src="../google.js"></script>
+
     
 </head>
 <body>
@@ -46,8 +54,8 @@
      <br>
      <div class="articol">
          
-         
-         <?php
+        
+<?php
 
 session_start();
     
@@ -60,6 +68,15 @@ session_start();
     } else {
         echo("<p style=\"background-color: green;color:white;\">Conectat la server</p> <br>");
     }
+         
+         ?>
+         
+     </div>
+     
+     <div class="articol">
+         
+         
+         <?php
 
          
     $query = "SELECT max(ID) FROM form";
@@ -72,7 +89,7 @@ session_start();
     $qfirst = mysqli_query ($db, $first);
     $ifirst = mysqli_fetch_assoc ($qfirst);
     echo "<article class=\"mySlides\"/>
-            <h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "</h6>
+            <h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: </h6>
             <h3>" . $ifirst["sesizari"] . "</h3>
             <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
             <p>" . $ifirst["descriere"] . "</p> </article>";
@@ -96,22 +113,45 @@ session_start();
          
 
     mysqli_close($db);
-
-?>
          
+?>
 
+         <div class="g-signin2" data-onsuccess="onSignIn">
+             <button onload="checkLogin"></button>
+         </div>
+
+            
+      
+           
+                <p id="status"></p>
+                <p id="slideindex">1</p>
+         
+         <form action="../report.php" method="POST" id="rep">
+             <input id="id" style="display:none;" name="id">
+             <input id="name" style="display:none" name="name">
+
+             <button id="report" style="display:none;">Report</button>
+         </form>
+        
+         
+         
          <button class="test-btn black-btn left-display-btn" onclick="plusDivs(-1)">&#10094;</button>
          
          <button class="test-btn black-btn right-display-btn" onclick="plusDivs(1)">&#10095;</button>
          
+         
      </div>
      
-     <form style="border: 1px solid #ccc" class="signup-form" method="POST" action="../signup.php">
+     
+     
+     
+     
+     <form style="border: 1px solid #ccc" class="signup-form" method="POST" action="../templates/signup.php">
          <div class="containter">
             <p>FII la curent!</p>
             <hr>
          
-         <input class="signup-input" type="text" placeholder="Email" name="email" required>
+         <input class="signup-input" type="email" placeholder="Email" name="email" required>
         
              
          <input class="signup-input" type="text" placeholder="Oras" name="oras" required>
@@ -133,6 +173,7 @@ session_start();
  	</footer>
 
     </div>
+    
     
 </body>
 </html>

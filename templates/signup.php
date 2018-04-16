@@ -17,11 +17,11 @@
     
     }
 
-    $sql = "INSERT INTO signup(email, oras) VALUES ('$email', '$oras')";
+    $sql = "INSERT INTO signup(mail, oras) VALUES ('$email', '$oras')";
 
     mysqli_query ($db, $sql);
 
-    header ('Location: ../templates/index.html');
+    header ('Location: ../templates/index.php');
 
 
 ?>
