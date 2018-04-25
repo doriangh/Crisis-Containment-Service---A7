@@ -52,6 +52,11 @@
 
  <div class="sectiune_text">
      <br>
+     
+     
+     
+     
+<!--
      <div class="articol">
          
         
@@ -69,14 +74,15 @@ session_start();
         echo("<p style=\"background-color: green;color:white;\">Conectat la server</p> <br>");
     }
          
-         ?>
+?>
          
      </div>
+-->
      
      <div class="articol">
          
          
-         <?php
+<?php
 
          
     $query = "SELECT max(ID) FROM form";
@@ -116,23 +122,33 @@ session_start();
          
 ?>
 
-         <div class="g-signin2" data-onsuccess="onSignIn">
-             <button onload="checkLogin"></button>
-         </div>
+       
 
             
       
            
                 <p id="status"></p>
-                <p id="slideindex">1</p>
+                <p id="slideindex" name="slideindex"></p>
+         
+         
+         <div id='signin' class="g-signin2" data-onsuccess="onSignIn" style="display:block;">
+             <button onload="checkLogin"></button>
+         </div>
+        
+         <div class="clearfix">
+           
+         
          
          <form action="../report.php" method="POST" id="rep">
              <input id="id" style="display:none;" name="id">
              <input id="name" style="display:none" name="name">
-
-             <button id="report" style="display:none;">Report</button>
+<!--            <input id="slideindex" style="display:none" name="index">-->
+             <button id="report" class="adaugabtn" style="display:none;width:50%;margin-bottom:0">Report</button>
          </form>
-        
+             
+             
+              <a href="#" onclick="signOut();"><button class="cancelbtn" href="#"id='signout' style="display:none;width:50%;">Sign Out</button></a>
+         </div>
          
          
          <button class="test-btn black-btn left-display-btn" onclick="plusDivs(-1)">&#10094;</button>
@@ -143,7 +159,7 @@ session_start();
      </div>
      
      
-     
+       
      
      
      <form style="border: 1px solid #ccc" class="signup-form" method="POST" action="../templates/signup.php">
@@ -158,9 +174,9 @@ session_start();
     
          
          <div class="clearfix">
-            <button type="button" class="cancelbtn">Cancel</button>
              
-             <button type="submit" class="adaugabtn" name="sign-up">Sign Up</button>
+            <button type="submit" class="adaugabtn" name="sign-up">Sign Up</button>
+            <button type="button" class="cancelbtn">Cancel</button>
          
          </div>
          </div>

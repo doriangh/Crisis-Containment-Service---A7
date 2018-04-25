@@ -16,23 +16,24 @@
      var id = profile.getId();
     
     if (profile.getName()){
+        document.getElementById('status').style.display = 'block';
         document.getElementById("status").innerHTML = profile.getName() + ' ' + id;
         document.getElementById('id').value = profile.getId();
         document.getElementById('name').value = profile.getName();
         document.getElementById("report").style.display = 'block';
+        document.getElementById('signout').style.display = 'block';
+        document.getElementById('signin').style.display = 'none';
     }
     else{
         document.getElementById('status').innerHTML = 'error';
         document.getElementById('report').style.display = 'none';
+        document.getElementById('signout').style.display = 'none';
+        
     }
     
 //  alert(profile.getName() + ', you can now report!');   
     
    
-    
-    $.post("../report.php", id, function (data){
-        alert(data);
-    });
     
     
     
@@ -49,10 +50,19 @@
           }
       }
       
-      function logout()
-      {
-          sessionStorage.clear();
-      }
+   
+function signOut() {
+    
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        document.getElementById('report').style.display = 'none';
+        document.getElementById('status').style.display = 'none';
+        document.getElementById('signout').style.display = 'none';
+        document.getElementById('signin').style.display = 'block';
+        console.log('User signed out.');
+    });
+    
+}
       
 
 

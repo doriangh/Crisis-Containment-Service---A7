@@ -15,9 +15,9 @@ session_start();
 
     $id = $_POST["id"];
     $name = $_POST["name"];
-    $index = $_POST["slideindex"];
+    // $index = $_POST["index"];
         
-    echo $id . ' ' . $name . ' ' . $index;
+    // echo $id . ' ' . $name . ' ' . $index;
 
     $checkid = "SELECT id FROM report WHERE id = '$id'";
     
@@ -31,17 +31,17 @@ session_start();
 
 
 
-    if ($val->num_rows || $valname->num_rows){
-        echo "<script> alert('deja existent');
-                window.location.href='../templates/index.php'</script>";
+   if ($val->num_rows || $valname->num_rows){
+       echo "<script> alert('deja existent');
+               window.location.href='../templates/index.php'</script>";
 
-    }else{
-        $sql = "INSERT INTO report (id, name) VALUES ('$id', '$name')";
-        mysqli_query ($db, $sql);
-        echo "<script> alert('ai fost adaugat cu succes');
-                window.location.href='../templates/index.php'</script>";
+   }else{
+       $sql = "INSERT INTO report (id, name) VALUES ('$id', '$name')";
+       mysqli_query ($db, $sql);
+       echo "<script> alert('ai fost adaugat cu succes');
+               window.location.href='../templates/index.php'</script>";
 
-    }
+   }
 
         
 

@@ -425,3 +425,12 @@ button {
     transform: translate(0%, -50%);
     -ms-transform: translate (-50%, 0%);
 }
+
+.g-signin2 {    
+    width: 100%;
+    
+}
+
+.g-signin2 > div {
+    margin: 0 auto 30px auto;
+}
