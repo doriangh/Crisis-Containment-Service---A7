@@ -8,7 +8,7 @@
     <script src="../scripts/slide-show.js" type="text/javascript"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
     
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     
     <meta name="google-signin-client_id" content="580134955331-dsvnpsi07grklncod32u8cj2j13hm826.apps.googleusercontent.com"> 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
@@ -25,7 +25,7 @@
             <a href="../templates/inundatii.html">Inundatii</a>
             <a href="../templates/cutremure.html">Cutremure</a>
             <a href="../templates/incendii.html">Incendii</a>
-            <a href="../templates/harta.html">Harta</a>
+            <a href="../templates/new-harta.php">Harta</a>
             <a href="../templates/adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
          
             <form id="searchBtn" class="top-form" action="../templates/search-map.html" method="GET">
@@ -95,7 +95,7 @@ session_start();
     $qfirst = mysqli_query ($db, $first);
     $ifirst = mysqli_fetch_assoc ($qfirst);
     echo "<article class=\"mySlides\"/>
-            <h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: </h6>
+            <h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "</h6>
             <h3>" . $ifirst["sesizari"] . "</h3>
             <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
             <p>" . $ifirst["descriere"] . "</p> </article>";
@@ -109,7 +109,7 @@ session_start();
         
         while ($row = mysqli_fetch_assoc ($result)) {
             echo "<article class=\"mySlides\" style=\"display:none;\">
-                    <h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: 29/04/2018 </h6>
+                    <h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h6>
                     <h3>" . $row["sesizari"] . "</h3>
                     <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
                     <p>" . $row["descriere"] . "</p> </article>";
@@ -127,13 +127,19 @@ session_start();
             
       
            
-                <p id="status"></p>
-                <p id="slideindex" name="slideindex"></p>
-         
+                <p id="status" style="display:none"></p>
          
          <div id='signin' class="g-signin2" data-onsuccess="onSignIn" style="display:block;">
              <button onload="checkLogin"></button>
          </div>
+         
+        <p id="slideindex" name="slideindex">1</p>
+         
+         
+
+         
+         
+         
         
          <div class="clearfix">
            
@@ -142,10 +148,11 @@ session_start();
          <form action="../report.php" method="POST" id="rep">
              <input id="id" style="display:none;" name="id">
              <input id="name" style="display:none" name="name">
-<!--            <input id="slideindex" style="display:none" name="index">-->
+             <input id="slide" style="display:none" name="slide" value=1>
              <button id="report" class="adaugabtn" style="display:none;width:50%;margin-bottom:0">Report</button>
          </form>
              
+
              
               <a href="#" onclick="signOut();"><button class="cancelbtn" href="#"id='signout' style="display:none;width:50%;">Sign Out</button></a>
          </div>
@@ -175,7 +182,7 @@ session_start();
          
          <div class="clearfix">
              
-            <button type="submit" class="adaugabtn" name="sign-up">Sign Up</button>
+            <button type="submit" class="adaugabtn" name="sign-up" style="border:1px">Sign Up</button>
             <button type="button" class="cancelbtn">Cancel</button>
          
          </div>

@@ -16,8 +16,8 @@
      var id = profile.getId();
     
     if (profile.getName()){
-        document.getElementById('status').style.display = 'block';
-        document.getElementById("status").innerHTML = profile.getName() + ' ' + id;
+//        document.getElementById('status').style.display = 'block';
+//        document.getElementById("status").innerHTML = profile.getName() + ' ' + id;
         document.getElementById('id').value = profile.getId();
         document.getElementById('name').value = profile.getName();
         document.getElementById("report").style.display = 'block';
@@ -33,12 +33,24 @@
     
 //  alert(profile.getName() + ', you can now report!');   
     
-   
-    
-    
-    
+
 }
      
+
+function renderButton() {
+    gapi.signin2.render('my-signin2', {
+        'scope' : 'profile email',
+        'width' : 240,
+        'height' : 50,
+        'longtitle' : false,
+        'theme' : 'light',
+        'onsuccess' : onSignIn,
+        'text' : 'kdkadk'
+
+    });
+}
+
+
 
       function checkLogin() {
           if (sessionStorage.getItem('myUserEntity') == null) {
@@ -63,6 +75,4 @@ function signOut() {
     });
     
 }
-      
-
 
