@@ -1,0 +1,189 @@
+* {box-sizing: border-box;}
+
+
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+/*Resetarea codului CSS*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*Inceputul editarilor css dupa resetare*/
+
+/*  */
+header{
+	background-color:#70665c;
+	height: 50px;
+	width: 100%;
+}
+
+
+/* Editarea textului de titlu */
+header p {
+    font-size: 50px;
+    text-align: center;
+    color: antiquewhite;
+    margin: 14px 0 20px 0;
+    font-family: Tahoma;
+}
+
+/* Alinierea textului  */
+.container_pagina{ 
+	border: 5px solid #ccc;
+    margin: 20px 150px;
+    background-color: white;
+}
+
+/* Marginile textului alaturi de aliniere  si de background pentru text si font */
+.container_pagina article{ 
+    margin: 40px 30px 30px 30px;
+    line-height: 35px;
+    background-color: white;
+    font-family: Tahoma;
+}
+
+@media screen and (max-width: 1000px){
+    .container_pagina {
+        margin: 20px 20px 20px 20px;
+    }
+}
+
+/* Font si alinierae si marginea pentru paragrafe */
+.container_pagina p { 
+    font-size: 18px;
+    margin-top: 60px;
+    font-family: Tahoma;
+    text-align: left;
+}
+
+ /* Pentru o linie orizontala */
+.container_pagina hr {
+    
+    margin: 0 20px 0 20px;
+}
+
+/* Editarea incadrarii in pagina si a caracteristicilor spatiului de text */
+.sectiune_text_pagina{
+	background-color: grey;
+	width: 100%;
+    height: auto;
+}
+
+
+
+/* Editarea distantei,marimii si a font-ului textului din paragrafe */
+.sectiune_text_pagina p{
+	margin: auto;
+    width: 100%;
+    line-height: 2;
+    text-indent: 40px;
+	font-size: 18px;
+	font-family: Tahoma;
+}
+
+
+/* Editarea textului subtitlurilor paginii(Cauza,Efecte,Prevenire) */
+.sectiune_text_pagina h3{
+	padding: 20px 20px;
+	font-size: 30px;
+}
+/* Editarea spatiului de subtitlu a paginii(Cauza,Efecte,Prevenire) */
+.header_art {
+    background-color:#856647;
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+}
+
+
+
+/* Ingrosarea liniilor puse in aceasta clasa (Subpunctele de la Cauze) */
+.ingrosat{
+	font-weight: bold;
+	font-size: 30px;
+}
+
+/* Header de tip 3 */
+.header_art h3{ 
+	padding-left:20px ; 
+	font-size: 30px;
+}
+
+/* Asezarea pozelor pe partea stanga a paginii */
+.poza1{
+	width: auto;
+	max-width: 40%;
+	height: auto;
+	max-height: 40%;
+	padding-left: 10px;
+	padding-right: 10px;
+	float:left;
+}
+
+/* Asezarea pozelor pe partea dreapta a paginii */
+.poza2{
+	width: auto;
+	max-width: 40%;
+	height: auto;
+	max-height: 40%;
+	padding-left: 10px;
+	padding-right: 10px;
+	float:right;
+}
+
+
+/* Editarea footer-ului */
+footer{
+    width: 100%;
+	background-color: #70665c;
+	padding: 50px 0px;
+	text-align: center;
+	font-size: 15px;
+	color: white;
+}
+
