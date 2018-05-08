@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+	<meta charset="utf-8" >
+	<title>CriC</title>
+	<link rel="stylesheet" type="text/css" href="../styles/arhiva.css">
+	<link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+
+	
+</head>
+<body>
+<!-- Bara de navigare -->
+     <div class="topnav">
+            <a href="../templates/index.php">Acasa</a>
+            <a class="active" href="../templates/inundatii.html">Inundatii</a>
+            <a href="../templates/cutremure.html">Cutremure</a>
+            <a href="../templates/incendii.html">Incendii</a>
+            <a href="../templates/harta.html">Harta</a>
+            <a href="../templates/arhiva.html">Arhiva</a>
+            <a href="../templates/adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
+        
+<!-- Buton de cautare -->
+   
+           <form id="searchBtn" class="top-form" action="../templates/search-map.html" method="GET">
+                <input id="textSearch" class="search" type="text" name="city" placeholder="Cauta Oras..." required >
+                <input class="button-top" type="submit" value="Cauta">
+               <script src="../scripts/search-autocomplete.js" defer></script>
+            </form>
+        </div>
+    
+<div class="main">
+    
+<!--Imaginea paginii-->
+
+
+   <div class="top">
+        <img src="../images/arh.jpg" alt="Imagine cu furtuna" class="responsive">
+    </div> 
+    
+
+
+
+<!--Titlul paginii -->
+
+<header>
+	<p>Arhiva evenimentelor</p>
+</header>
+<br>
+<!-- Sectiunea cu informatiile paginii -->
+ <div class="sectiune_text_pagina">
+ 	<br>
+ 	<div class="container_pagina">
+ 		  <article class="mySlides">
+
+ 	
+ 		<h3 class="header_art">Evenimente</h3><br>
+ 		<!--<img class="poza1" alt="Efect inundatie" src="../images/inundatie2.gif">  -->
+
+	
+		<br>
+		<!--<h3 class="header_art">Cauza</h3><br> -->
+		
+</p>
+</article>
+
+ </div>
+ <br>
+
+ </div>
+  <footer> 
+ 		<h1><u>&copy;Tehnologii Web</u></h1>
+ 		<br>
+ 	</footer>
+
+
+
+ 	
+
+</div>
+
+</body>
+</html>
