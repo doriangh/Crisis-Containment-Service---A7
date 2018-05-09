@@ -45,7 +45,7 @@ session_start();
 //    echo $result;
 
     $test[] = $result["id"];
-    print_r($test[0]);
+//    print_r($test[0]);
 
     $val = $test[0] + 1;
 
