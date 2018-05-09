@@ -32,6 +32,7 @@
             <a href="../templates/adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
          
             <form id="searchBtn" class="top-form" action="../templates/search-map.html" method="GET">
+<!--                <script type="text/javascript" src="../scripts/search-autocomplete.js"></script>-->
                 <input id="adresa" class="search" type="text" name="city" placeholder="Cauta Oras..." required >
                 <input class="button-top" type="submit" value="Cauta">
             </form>

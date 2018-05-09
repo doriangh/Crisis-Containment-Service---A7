@@ -7,6 +7,9 @@ document.getElementsByTagName('head')[0].appendChild(js_file);
 function initialize() {
     var input = document.getElementById("adresa");
     var autocomplete = new google.maps.places.Autocomplete(input);
+    
+    var input2 = document.getElementById("search");
+    var autocomplete = new google.maps.places.Autocomplete(input2);
 }
 
     google.maps.event.addDomListener(window, 'load', initialize);

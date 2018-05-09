@@ -19,10 +19,9 @@
             <a class="active" href="../templates/new-harta.php">Harta</a>
             <a href="../templates/adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
          
-            <form id="searchBtn" class="top-form">
-                <input id="textSearch" class="search" type="text" placeholder="Cauta Oras..." required >
+            <form id="searchBtn" class="top-form" action="../templates/search-map.html" method="GET">
+                <input id="adresa" class="search" type="text" name="city" placeholder="Cauta Oras..." required >
                 <input class="button-top" type="submit" value="Cauta">
-                <script src="../scripts/search-autocomplete.js" defer></script>
             </form>
         </div>
       
