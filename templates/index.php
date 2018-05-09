@@ -25,7 +25,7 @@
             <a href="../templates/inundatii.html">Inundatii</a>
             <a href="../templates/cutremure.html">Cutremure</a>
             <a href="../templates/incendii.html">Incendii</a>
-            <a href="../templates/arhiva.html">Arhiva</a>
+            <a href="../templates/arhiva.php">Arhiva</a>
             <a href="../templates/new-harta.php">Harta</a>
             <a href="../templates/adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
          
