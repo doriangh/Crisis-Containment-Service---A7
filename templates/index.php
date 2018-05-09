@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
+    
+    <!-- Link la diferite surse/fisiere -->
 	<meta charset="utf-8" content="width=device-width, initial-scale=1">
 	<title>CriC</title>
 	<link rel="stylesheet" type="text/css" href="../styles/style.css">
@@ -12,28 +14,26 @@
     
     <meta name="google-signin-client_id" content="580134955331-dsvnpsi07grklncod32u8cj2j13hm826.apps.googleusercontent.com"> 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-  <script src="https://apis.google.com/js/api:client.js"></script>
+    <script src="https://apis.google.com/js/api:client.js"></script>
     
     <script type="text/javascript" src="../google.js"></script>
 
-    
 </head>
-<body>
     
+<body>
+    <!-- Meniul -->
      <div class="topnav">
             <a class="active" href="../templates/index.php">Acasa</a>
             <a href="../templates/inundatii.html">Inundatii</a>
             <a href="../templates/cutremure.html">Cutremure</a>
             <a href="../templates/incendii.html">Incendii</a>
+            <a href="../templates/arhiva.php">Arhiva</a>
             <a href="../templates/new-harta.php">Harta</a>
             <a href="../templates/adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
          
             <form id="searchBtn" class="top-form" action="../templates/search-map.html" method="GET">
                 <input id="adresa" class="search" type="text" name="city" placeholder="Cauta Oras..." required >
                 <input class="button-top" type="submit" value="Cauta">
-               
-
-        
             </form>
         </div>
     
@@ -53,9 +53,6 @@
  <div class="sectiune_text">
      <br>
      
-     
-     
-     
 <!--
      <div class="articol">
          
@@ -64,7 +61,6 @@
 
 session_start();
     
-//    $db = mysqli_connect ("localhost", "root", "59885236", "CriC");
          
     $db = mysqli_connect ("golar3.go.ro", "tw", "59885236", "CriC");
     
@@ -80,13 +76,9 @@ session_start();
 -->
      
      <div class="articol">
-         
-<!--    <p style="background-color: green; color:white">Eveniment de incredere</p>-->
         
-         
 <?php
-
-         
+    
     $query = "SELECT max(ID) FROM form";
     $max = mysqli_query ($db, $query);
     $item = mysqli_fetch_assoc ($max);
@@ -105,6 +97,7 @@ session_start();
             <h3>" . $ifirst["sesizari"] . "</h3>
             <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
             <p>" . $ifirst["descriere"] . "</p> </article>";
+        
     } else if ($ifirst["report"] <= 9) {
         
         echo "<article class=\"mySlides\"/>
@@ -129,6 +122,7 @@ session_start();
 
     $result = mysqli_query ($db, $counter);
 
+         
     if (mysqli_num_rows ($result) > 0) {
         
         while ($row = mysqli_fetch_assoc ($result)) {
@@ -161,7 +155,6 @@ session_start();
                     <p>" . $row["descriere"] . "</p> </article>";
                 
             }
-         
         }
     }
          
@@ -187,7 +180,7 @@ session_start();
              <input id="id" style="display:none;" name="id">
              <input id="name" style="display:none" name="name">
              <input id="slide" style="display:none" name="slide" value=1>
-             <button id="report" class="adaugabtn" style="display:none;width:50%;margin-bottom:0" onclick="updateTrust()">Report</button>
+             <button id="report" class="adaugabtn" style="display:none;width:50%;margin-bottom:0">Report</button>
          </form>
              
 

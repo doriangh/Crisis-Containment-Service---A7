@@ -6,9 +6,10 @@ session_start();
     
     if (!$db) {
         die ("Connection failed: " . mysqli_connect_error());
-    } else {
-        echo('Success');
-    }
+    } 
+//    else {
+//        echo('Success');
+//    }
 
 
 
@@ -44,7 +45,7 @@ session_start();
 //    echo $result;
 
     $test[] = $result["id"];
-//    print_r($test[0]);
+    print_r($test[0]);
 
     $val = $test[0] + 1;
 
@@ -60,7 +61,10 @@ session_start();
 
 
 
-   if ($val->num_rows || $valname->num_rows && $valslide->num_rows){
+
+
+
+   if ($valname->num_rows && $valslide->num_rows){
        echo "<script> alert('Ati raportat deja!');
                window.location.href='../templates/index.php'</script>";
 

@@ -15,6 +15,7 @@
             <a href="../templates/inundatii.html">Inundatii</a>
             <a href="../templates/cutremure.html">Cutremure</a>
             <a href="../templates/incendii.html">Incendii</a>
+            <a href="../templates/arhiva.php">Arhiva</a>
             <a class="active" href="../templates/new-harta.php">Harta</a>
             <a href="../templates/adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
          
@@ -31,8 +32,8 @@
 
         <div id="map"></div>
         <script src="../scripts/new-map.js" defer></script>
-        <br>
         
+        <br>
         <a href="harta.html"><button>Mergeti la locatia dvs.</button></a>
     
     </div>
@@ -57,8 +58,8 @@
         //Incepem generarea fisierului JSON
         $intro = "eqfeed_callback("; //Necesitate la inceputul JSON de la Google Maps Api
         $outro = ")";
-        $address = array();
     
+        $address = array();
         $coord = array();
         $geometry = array();
         $response = array();
@@ -67,6 +68,7 @@
         $result = mysqli_query($db, $sql); 
     
     while ($row = mysqli_fetch_array($result)) {
+        
         $latitude = $row['latitude'];
         $longitude = $row['longitude'];
         $oras = $row['adresa'];

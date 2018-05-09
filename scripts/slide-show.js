@@ -25,5 +25,4 @@ function showDivs(n) {
     
     document.getElementById('slide').value = slideIndex;
     document.getElementById('slideindex').innerHTML = slideIndex;
-    
 }
