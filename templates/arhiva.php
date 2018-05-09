@@ -75,22 +75,23 @@ session_start();
 
 
          
-    $counter = "SELECT * FROM form order by added; ";
+    $counter = "SELECT * FROM form order by id desc; ";
 
     $result = mysqli_query ($db, $counter);
 
     if (mysqli_num_rows ($result) > 0) {
-        
+        $ind=1;
         while ($row = mysqli_fetch_assoc ($result)) {
-           echo "<article class=\"mySlides\" style=\"display:block;\"><br><br>
-                    <h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h6>
-                    <p style=\"background-color:green;color:white;\">Eveniment de Incredere</p>
+           echo "<article class=\"mySlides\" style=\"display:block;\"><br>  
+                    <HR WIDTH=98%; SIZE=10; COLOR=grey><br>
+                     
+                    <h5 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h5>
                     <h3>" . $row["sesizari"] . "</h3>
                     <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
-                    <p>" . $row["descriere"] . " <br> </p> 
-                    <HR WIDTH=98%; SIZE=6; COLOR=green><br><br><br></article>";
+                    <p>" . $row["descriere"] . " <br> " . $ind."</p> 
+                  </article>";
 
-
+            $ind++;
             }
         }
 
@@ -105,7 +106,6 @@ session_start();
       
            
         <p id="status" style="display:none"></p>
-        <p id="slideindex" name="slideindex">1</p>
  
         
          
