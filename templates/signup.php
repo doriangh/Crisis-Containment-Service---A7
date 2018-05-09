@@ -20,6 +20,10 @@
 
     $sql = "INSERT INTO signup(mail, oras) VALUES ('$email', '$oras')";
 
+    $subj = "Abonare la newsletter";
+    $msg = "V-ati abonat cu succes la newsletter-ul site-ului !\nOrasul dumneavoastra este: $oras";
+    mail($email,$subj,$msg,'From: crisis.containment@gmail.com');
+
     mysqli_query ($db, $sql);
 
     header ('Location: ../templates/index.php');
