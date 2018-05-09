@@ -46,7 +46,7 @@
     
 <header>
     
-    <h1>Ultimele Noutati</h1>
+    <h1 id="titlu">Ultimele Noutati</h1>
     
 </header>
 

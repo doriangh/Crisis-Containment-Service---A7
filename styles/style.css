@@ -142,7 +142,6 @@ content{
         border: 1px solid #ccc;
     }
 
-
 }
 
 .topnav input {
@@ -192,6 +191,14 @@ content{
 /*Setata pagina mai jos pentru a nu taia banner-ul*/
 .main {
     margin-top: 44px;
+}
+
+@media screen and (max-width: 870px) {
+ 
+    .main {
+        margin-top: 275px;
+    }
+    
 }
 
 /*Butonul de search din meniu*/
