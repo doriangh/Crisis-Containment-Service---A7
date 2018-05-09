@@ -24,7 +24,7 @@ document.getElementsByTagName('head')[0].appendChild(js_file);
 var map, infoWindow;
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 47.1739724, lng: 27.5749111},
+          center: {lat: 122.0312, lng: 122.0312},
           zoom: 15
         });
           

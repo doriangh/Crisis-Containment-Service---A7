@@ -33,7 +33,7 @@
         <script src="../scripts/new-map.js" defer></script>
         <br>
         
-        <a href="harta.html"><p>Mergeti la locatia dvs.</p></a>
+        <a href="harta.html"><button>Mergeti la locatia dvs.</button></a>
     
     </div>
 </div>
