@@ -81,6 +81,8 @@ session_start();
      
      <div class="articol">
          
+<!--    <p style="background-color: green; color:white">Eveniment de incredere</p>-->
+        
          
 <?php
 
@@ -94,11 +96,33 @@ session_start();
     $first = "SELECT * FROM form WHERE ID = $maxim";
     $qfirst = mysqli_query ($db, $first);
     $ifirst = mysqli_fetch_assoc ($qfirst);
-    echo "<article class=\"mySlides\"/>
+         
+    if ($ifirst["report"] <= 4){
+        
+        echo "<article class=\"mySlides\"/>
             <h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "</h6>
+            <p style=\"background-color:green;color:white;\">Eveniment de Incredere</p>
             <h3>" . $ifirst["sesizari"] . "</h3>
             <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
             <p>" . $ifirst["descriere"] . "</p> </article>";
+    } else if ($ifirst["report"] <= 9) {
+        
+        echo "<article class=\"mySlides\"/>
+            <h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "</h6>
+            <p style=\"background-color:yellow;color:black;\">Eveniment Potential Incorect</p>
+            <h3>" . $ifirst["sesizari"] . "</h3>
+            <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
+            <p>" . $ifirst["descriere"] . "</p> </article>";
+        
+    } else {
+        
+        echo "<article class=\"mySlides\"/>
+            <h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "</h6>
+            <p style=\"background-color:red;color:white;\">Eveniment Incorect</p>
+            <h3>" . $ifirst["sesizari"] . "</h3>
+            <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
+            <p>" . $ifirst["descriere"] . "</p> </article>";
+    }
          
          
     $counter = "SELECT * FROM form where ID between $maxim - 9 and $maxim - 1 order by ID desc;";
@@ -108,11 +132,35 @@ session_start();
     if (mysqli_num_rows ($result) > 0) {
         
         while ($row = mysqli_fetch_assoc ($result)) {
+            
+            if ($row["report"] <= 4) {
+            
             echo "<article class=\"mySlides\" style=\"display:none;\">
                     <h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h6>
+                    <p style=\"background-color:green;color:white;\">Eveniment de Incredere</p>
                     <h3>" . $row["sesizari"] . "</h3>
                     <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
                     <p>" . $row["descriere"] . "</p> </article>";
+                
+            } else if ($row["report"] <= 9) {
+                
+                echo "<article class=\"mySlides\" style=\"display:none;\">
+                    <h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h6>
+                    <p style=\"background-color:yellow;color:black;\">Eveniment Potential Incorect</p>
+                    <h3>" . $row["sesizari"] . "</h3>
+                    <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
+                    <p>" . $row["descriere"] . "</p> </article>";
+                
+            } else {
+                
+                echo "<article class=\"mySlides\" style=\"display:none;\">
+                    <h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h6>
+                    <p style=\"background-color:red;color:white;\">Eveniment Incorect</p>
+                    <h3>" . $row["sesizari"] . "</h3>
+                    <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
+                    <p>" . $row["descriere"] . "</p> </article>";
+                
+            }
          
         }
     }
@@ -120,36 +168,26 @@ session_start();
 
     mysqli_close($db);
          
-?>
-
-       
-
-            
+?>          
       
            
-                <p id="status" style="display:none"></p>
+        <p id="status" style="display:none"></p>
          
          <div id='signin' class="g-signin2" data-onsuccess="onSignIn" style="display:block;">
              <button onload="checkLogin"></button>
          </div>
          
-        <p id="slideindex" name="slideindex">1</p>
-         
-         
-
-         
-         
+         <p id="slideindex" name="slideindex">1</p>
          
         
          <div class="clearfix">
            
          
-         
          <form action="../report.php" method="POST" id="rep">
              <input id="id" style="display:none;" name="id">
              <input id="name" style="display:none" name="name">
              <input id="slide" style="display:none" name="slide" value=1>
-             <button id="report" class="adaugabtn" style="display:none;width:50%;margin-bottom:0">Report</button>
+             <button id="report" class="adaugabtn" style="display:none;width:50%;margin-bottom:0" onclick="updateTrust()">Report</button>
          </form>
              
 
