@@ -12,8 +12,8 @@
 
     if (isset($_POST['sign-up'])) {
 
-        $email = ($_POST['email']);
-        $oras = ($_POST['oras']);
+        $email = htmlspecialchars($_POST['email']);
+        $oras = htmlspecialchars($_POST['oras']);
         
     
     }

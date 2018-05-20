@@ -23,7 +23,7 @@
 <body>
     <!-- Meniul -->
      <div class="topnav">
-            <a class="active" href="../templates/index.php">Acasa</a>
+            <a class="active" href="../index.php">Acasa</a>
             <a href="../templates/inundatii.html">Inundatii</a>
             <a href="../templates/cutremure.html">Cutremure</a>
             <a href="../templates/incendii.html">Incendii</a>
@@ -206,7 +206,7 @@ session_start();
             <p>FII la curent!</p>
             <hr>
          
-         <input class="signup-input" type="email" placeholder="Email" name="email" required>
+         <input class="signup-input" type="email" placeholder="Email" name="email" pattern="[A-Za-z.@]+" required>
         
              
          <input class="signup-input" type="text" placeholder="Oras" name="oras" required>

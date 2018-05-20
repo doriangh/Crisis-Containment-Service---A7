@@ -21,7 +21,7 @@
 <body>
     
      <div class="topnav">
-            <a href="../templates/index.php">Acasa</a>
+            <a href="../index.php">Acasa</a>
             <a href="../templates/inundatii.html">Inundatii</a>
             <a href="../templates/cutremure.html">Cutremure</a>
             <a href="../templates/incendii.html">Incendii</a>
