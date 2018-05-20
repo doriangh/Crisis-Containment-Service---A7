@@ -6,9 +6,10 @@
     
     if (!$db) {
         die ("Connection failed: " . mysqli_connect_error());
-    } else {
-        echo('Success');
-    }
+    } 
+//    else {
+//        echo('Success');
+//    }
 
     function geocode ($address){
         
@@ -49,11 +50,11 @@
 
     if (isset($_POST['adaugabtn'])) {
 
-        $nume = ($_POST['nume']);
-        $prenume = ($_POST['prenume']);
+        $nume = htmlspecialchars($_POST['nume']);
+        $prenume = htmlspecialchars($_POST['prenume']);
 //        $oras = ($_POST['oras']);
-        $sesizari = ($_POST['sesizari']);
-        $descriere = ($_POST['descriere']);
+        $sesizari = htmlspecialchars($_POST['sesizari']);
+        $descriere = htmlspecialchars($_POST['descriere']);
         //$director = addslashes (file_get_contents($_FILES['imagine']['tmp_name']));
         
         
@@ -70,20 +71,27 @@
 
 //    echo $latitude . $longitude . $address . $nume;
 
+    $max = "SELECT max(id) from form;";
+    $max1 = mysqli_query($db, $max);
+    $max2 = mysqli_fetch_assoc($max1);
+    $max3 = $max2["max(id)"];
+    $max4 = $max3 + 1;
 
     if ($latitude != 0 || $longitude != 0){
-    $sql = "INSERT INTO form (nume, prenume, adresa, sesizari, descriere, latitude, longitude) VALUES ('$nume', '$prenume', '$data_arr[2]', '$sesizari', '$descriere',  '$data_arr[0]', '$data_arr[1]')";
+        
+        $update = "ALTER TABLE form AUTO_INCREMENT = '$max4'";
+        mysqli_query ($db, $update);
+        
+        $sql = "INSERT INTO form (nume, prenume, adresa, sesizari, descriere, latitude, longitude) VALUES ('$nume', '$prenume', '$data_arr[2]', '$sesizari', '$descriere',  '$data_arr[0]', '$data_arr[1]')";
 
-    mysqli_query ($db, $sql);
-
-
-
-    header ('Location: ../templates/index.php');
+        mysqli_query ($db, $sql);
+        
+        header ('Location: index.php');
+        
     } else {
         
         echo "<script> alert('Locatie incorecta');
-                window.location.href='../templates/adauga.html'</script>";
-        
+                window.location.href='../templates/adauga.html'</script>";   
     }
     
 

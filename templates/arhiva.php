@@ -42,7 +42,7 @@
     
 <!--Imagine sus -->
 <div class="top">
-        <img src="../images/arh.jpg" alt="Pamantul" class="responsive">
+        <img src="../images/arh.jpg" alt="Pamantul" class="responsive" style="display:block;max-width:100%;height=auto;">
 </div>
     
 <header>

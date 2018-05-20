@@ -1,5 +1,4 @@
-  function onSignIn(googleUser) 
-{
+  function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   console.log('ID: ' + profile.getId()); 
   console.log('Name: ' + profile.getName());
@@ -18,6 +17,7 @@
     if (profile.getName()){
 //        document.getElementById('status').style.display = 'block';
 //        document.getElementById("status").innerHTML = profile.getName() + ' ' + id;
+        document.getElementById('titlu').innerHTML = "Buna, " + profile.getName();
         document.getElementById('id').value = profile.getId();
         document.getElementById('name').value = profile.getName();
         document.getElementById("report").style.display = 'block';
@@ -25,6 +25,7 @@
         document.getElementById('signin').style.display = 'none';
     }
     else{
+        
         document.getElementById('status').innerHTML = 'error';
         document.getElementById('report').style.display = 'none';
         document.getElementById('signout').style.display = 'none';
@@ -67,6 +68,7 @@ function signOut() {
     
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
+        document.getElementById('titlu').innerHTML = "Ultimele noutati";
         document.getElementById('report').style.display = 'none';
         document.getElementById('status').style.display = 'none';
         document.getElementById('signout').style.display = 'none';

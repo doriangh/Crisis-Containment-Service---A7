@@ -11,9 +11,7 @@
     
 <body>
     
-    <a href="../templates/index.php"><button type="button" style="background-color: red;"> Inapoi
-    </button>
-    </a>
+    <a href="../templates/index.php"><button type="button" style="background-color: red;">Inapoi</button></a>
     
     <form style="border:0px solid #ccc" action="../templates/adauga.php" method="POST">
         <div class="container">
@@ -21,10 +19,10 @@
             <p>Descrie in cateva cuvinte ce s-a intamplat.</p>
             <hr>
             
-            <input id="nume" class="input" type="text" placeholder="Numele" name="nume" required>
+            <input id="nume" class="input" type="text" placeholder="Numele" name="nume" pattern="[A-Za-z ]+" required>
             <br>
             
-            <input id="prenume" class="input" type="text" placeholder="Prenume" name="prenume" required>
+            <input id="prenume" class="input" type="text" placeholder="Prenume" name="prenume" pattern="[A-Za-z ]+" required>
             <br>
             
             <script type="text/javascript" src="../scripts/search-autocomplete.js"></script>
@@ -42,11 +40,11 @@
             </select>
             
             
-            <input id="sesizari" class="input" type="text" placeholder="Sesizari" name="sesizari" required>
+            <input id="sesizari" class="input" type="text" placeholder="Sesizari" name="sesizari" pattern="[A-Za-z ]+" required>
             
 <!--            <input id="descriere" class="input" type="text" placeholder="Descriere" name="descriere" style="height: 100px;" required>-->
             
-            <textarea id="descriere" rows="5" class="input" type="text" placeholder="Descriere" name="descriere" style="resize: none" required></textarea>
+            <textarea id="descriere" rows="5" class="input" type="text" placeholder="Descriere" name="descriere" style="resize: none" pattern="[A-Za-z() ]+" required></textarea>
             
             
             <br>
