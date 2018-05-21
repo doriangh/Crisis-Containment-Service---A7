@@ -26,7 +26,7 @@
 
     mysqli_query ($db, $sql);
 
-    header ('Location: ../templates/index.php');
+    header ('Location: ../index.php');
 
 
 ?>

@@ -66,18 +66,18 @@ session_start();
 
    if ($valname->num_rows && $valslide->num_rows){
        echo "<script> alert('Ati raportat deja!');
-               window.location.href='../templates/index.php'</script>";
+               window.location.href='../index.php'</script>";
 
    }else{
        
        $sql = "INSERT INTO report (id, name, slide) VALUES ('$id', '$name', '$slide')";
        mysqli_query ($db, $sql);
        
-       $sql2 = "UPDATE form SET report = (report + 1) WHERE ID = ($val- $slide);";
+       $sql2 = "UPDATE form SET report = (report + 1) WHERE ID = ($val - $slide);";
        mysqli_query ($db, $sql2);
 
        echo "<script> alert('Ati raportat cu succes articolul " . $slide . "');
-               window.location.href='../templates/index.php'</script>";
+               window.location.href='../index.php'</script>";
 
    }
 
