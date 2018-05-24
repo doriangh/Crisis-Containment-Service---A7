@@ -3,7 +3,9 @@
 <head>
     
     <!-- Link la diferite surse/fisiere -->
-	<meta charset="utf-8" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+    <meta name="description" content="Crisis Containment Service">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>CriC</title>
 	<link rel="stylesheet" type="text/css" href="../styles/style.css">
 
@@ -17,6 +19,7 @@
     <script src="https://apis.google.com/js/api:client.js"></script>
     
     <script type="text/javascript" src="../google.js"></script>
+    
 
 </head>
     
@@ -77,6 +80,77 @@ session_start();
 -->
      
      <div class="articol">
+         
+         <!-- Sign In/Up (Maybe) -->
+<!--
+   <div class="clearfix">  
+         <button onclick="document.getElementById('login').style.display='block'; var modal=document.getElementById('login');" style="width:auto;">Login</button>
+
+         <div id="login" class="modal">
+             
+             <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+             <form class="modal-content animate">
+
+                <div class="container">
+
+                    <label for="uname"><b>Username</b></label>
+                    <input type="textbox" placeholder="Enter Username" name="uname" required>
+
+                    <label for="pwd"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="pwd" required>
+
+                    <button type="submit">Login</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember">Remember Me
+                    </label>
+
+                 </div>
+
+             </form>
+
+         </div>
+       
+       
+       
+       <button onclick="document.getElementById('signup').style.display='block'" style="width:auto;">Sign Up</button>
+       
+       <div id="signup" class="modal">
+       
+           <span onclick="document.getElementById('signup').style.display='none'; var modal = document.getElementById('signup');" class="close" title="Close Modal">&times;</span>
+           
+           <form class="modal-content animate">
+            
+                <div class="container">
+                
+                    <h1>Sign Up</h1>
+                    <span>Please fill in the form</span>
+                    <hr>
+                    <label for="email"><b>Email</b></label>
+                    <input type="textbox" placeholder="Enter Email" name="email" required>
+                    
+                    <label for="pwd"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="pwd" required>
+                    
+                    <label for="pwd-repeat"><b>Repeat Password</b></label>
+                    <input type="password" placeholder="Repeat Password" name="pwd-repeat" required>
+                    
+                    <div class="clearfix">
+                    
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                        <button type="submit" class="adaugabtn">Sign Up</button>
+                    
+                    </div>
+                    
+                </div>
+           
+           </form>
+       
+       
+       </div>
+       
+     </div>
+-->
         
 <?php
     
@@ -190,6 +264,8 @@ session_start();
          </div>
          
          
+         
+         
          <button class="test-btn black-btn left-display-btn" onclick="plusDivs(-1)">&#10094;</button>
          
          <button class="test-btn black-btn right-display-btn" onclick="plusDivs(1)">&#10095;</button>
@@ -210,8 +286,7 @@ session_start();
         
              
          <input class="signup-input" type="text" placeholder="Oras" name="oras" required>
-    
-         
+
          <div class="clearfix">
              
             <button type="submit" class="adaugabtn" name="sign-up" style="border:1px">Sign Up</button>
@@ -221,6 +296,26 @@ session_start();
          </div>
      </form> 
     <br>
+     
+ 
+<!-- Sign In/Up Exit (Maybe) -->
+<!--
+       <script>
+           
+           window.onclick = function(event) {
+               if (event.target == document.getElementById('login')) {
+                   document.getElementById('login').style.display = "none";
+               } else
+                if (event.target == document.getElementById('signup')) {
+                    document.getElementById('signup').style.display = "none";
+                }
+           }
+           
+       </script>
+-->
+     
+     
+     
     </div>
 
  	<footer> 

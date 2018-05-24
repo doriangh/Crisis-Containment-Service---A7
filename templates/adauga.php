@@ -79,14 +79,17 @@
 
     if ($latitude != 0 || $longitude != 0){
         
-        $update = "ALTER TABLE form AUTO_INCREMENT = '$max4'";
+        $update = "ALTER TABLE form AUTO_INCREMENT = $max4";
         mysqli_query ($db, $update);
         
         $sql = "INSERT INTO form (nume, prenume, adresa, sesizari, descriere, latitude, longitude) VALUES ('$nume', '$prenume', '$data_arr[2]', '$sesizari', '$descriere',  '$data_arr[0]', '$data_arr[1]')";
 
         mysqli_query ($db, $sql);
+
         
-        header ('Location: index.php');
+        header ('Location: ../index.php');
+        
+        
         
     } else {
         

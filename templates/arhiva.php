@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-	<meta charset="utf-8" content="width=device-width, initial-scale=1">
-	<title>CriC</title>
+	<meta charset="UTF-8">
+    <meta name="description" content="Crisis Containment Service">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<title>Arhiva</title>
 	<link rel="stylesheet" type="text/css" href="../styles/style.css">
 
     <script src="../scripts/slide-show.js" type="text/javascript"></script>
