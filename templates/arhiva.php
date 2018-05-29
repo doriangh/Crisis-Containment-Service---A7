@@ -79,7 +79,11 @@ session_start();
  
 
     $page1=0;
-    $page=$_GET["page"];
+    if (isset($_GET['page']))
+        $page=$_GET['page'];
+    else
+        $page = '';
+    
     if($page=="1" || $page == '')
     {
         $page1=0;
