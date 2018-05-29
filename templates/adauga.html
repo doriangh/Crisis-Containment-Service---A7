@@ -16,59 +16,61 @@
 <body>
     
     <a href="../index.php"><button type="button" style="background-color: red;">Inapoi</button></a>
-    
-    <form style="border:0px solid #ccc" action="../templates/adauga.php" method="POST">
-        <div class="container">
-            <h1>Adauga Eveniment</h1>
-            <p>Descrie in cateva cuvinte ce s-a intamplat.</p>
-            <hr>
-            
-            <input id="nume" class="input" type="text" placeholder="Numele" name="nume" pattern="[A-Za-z ]+" required>
-            <br>
-            
-            <input id="prenume" class="input" type="text" placeholder="Prenume" name="prenume" pattern="[A-Za-z ]+" required>
-            <br>
-            
-            <script type="text/javascript" src="../scripts/search-autocomplete.js"></script>
-            
-            <input id="adresa" class="input" type="text" placeholder="Locatie" name="adresa" autocomplete="off" required>
-            
-            <select name="categorie" class="input" style="height: 50px;">
-            
-                <option value="" disabled selected style="color:gray">Alegeti Tipul de Eveniment</option>
-                <option value="inundatii">Inundatii</option>
-                <option value="cutremure">Cutremure</option>
-                <option value="incendii">Incendii</option>
-                <option value="other">Altul</option>
-                
-            </select>
-            
-            
-            <input id="sesizari" class="input" type="text" placeholder="Sesizari" name="sesizari" pattern="[A-Za-z ]+" required>
-            
-<!--            <input id="descriere" class="input" type="text" placeholder="Descriere" name="descriere" style="height: 100px;" required>-->
-            
-            <textarea id="descriere" rows="5" class="input" type="text" placeholder="Descriere" name="descriere" style="resize: none" pattern="[A-Za-z() ]+" required></textarea>
-            
-            
-            <br>
-            <input type="file" id="imagini" name="imagine" accept=".jpg, .jpeg, .png">
-            <br>
-            <br>
-            
-            
-            <div class="clearfix">
-                
-                
-                <button type="submit" class="adaugabtn" name="adaugabtn">Adauga</button>
-                
-            </div>
-            <br>
-            
-        </div>
-    
+    <form action="adauga.php" method="post" enctype="multipart/form-data">
+		<form style="border:0px solid #ccc" action="../templates/adauga.php" method="POST">
+			<div class="container">
+				<h1>Adauga Eveniment</h1>
+				<p>Descrie in cateva cuvinte ce s-a intamplat.</p>
+				<hr>
+				
+				<input id="nume" class="input" type="text" placeholder="Numele" name="nume" pattern="[A-Za-z ]+" required>
+				<br>
+				
+				<input id="prenume" class="input" type="text" placeholder="Prenume" name="prenume" pattern="[A-Za-z ]+" required>
+				<br>
+				
+				<script type="text/javascript" src="../scripts/search-autocomplete.js"></script>
+				
+				<input id="adresa" class="input" type="text" placeholder="Locatie" name="adresa" autocomplete="off" required>
+				
+				<select name="categorie" class="input" style="height: 50px;">
+				
+					<option value="" disabled selected style="color:gray">Alegeti Tipul de Eveniment</option>
+					<option value="inundatii">Inundatii</option>
+					<option value="cutremure">Cutremure</option>
+					<option value="incendii">Incendii</option>
+					<option value="other">Altul</option>
+					
+				</select>
+				
+				
+				<input id="sesizari" class="input" type="text" placeholder="Sesizari" name="sesizari" pattern="[A-Za-z ]+" required>
+				
+	<!--            <input id="descriere" class="input" type="text" placeholder="Descriere" name="descriere" style="height: 100px;" required>-->
+				
+				<textarea id="descriere" rows="5" class="input" type="text" placeholder="Descriere" name="descriere" style="resize: none" pattern="[A-Za-z() ]+" required></textarea>
+				
+				
+				<br>
+					Select image to upload:
+				<input type="file" name="fileToUpload" id="fileToUpload">
+				</form>
+				<br>
+				<br>
+				
+				
+				<div class="clearfix">
+					
+					
+					<button type="submit" class="adaugabtn" name="adaugabtn" value="Upload Image">Adauga</button>
+					
+				</div>
+				<br>
+				
+			</div>
+		
+		</form>
     </form>
-    
 
 </body>    
     
