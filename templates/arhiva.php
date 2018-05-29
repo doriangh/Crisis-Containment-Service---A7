@@ -75,13 +75,15 @@ session_start();
     } 
 
     //Luam numarul paginii scris in adresa URl a paginii arhivei    
-    $page=$_GET["page"];
+    
+    $exist = 
 
-    if($page=="" || $page=="1")
+    $page1=0;
+    $page=$_GET["page"];
+    if($page=="1" || $page == '')
     {
         $page1=0;
-    }
-         
+    }  
     else {
         $page1 = ($page+5) - 5;
          }     
@@ -94,7 +96,7 @@ session_start();
               
     if (mysqli_num_rows ($result) > 0) {
         //Algoritmul folosit pentru a se afisa indexul potrivit fiecarui eveniment
-        $ind=($page-1)*20 + 1;
+        $ind=$page1*20 + 1;
         while ($row = mysqli_fetch_assoc ($result)) {
            echo "<article class=\"mySlides\" style=\"display:block;\"><br>  
                     <HR WIDTH=98%; SIZE=10; COLOR=grey><br>
