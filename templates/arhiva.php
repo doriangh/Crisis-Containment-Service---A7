@@ -68,22 +68,33 @@
         
 session_start();
      
-
+    //Conectarea la baza noastra de date si la localhost
     $db = mysqli_connect ("golar3.go.ro", "tw", "59885236", "CriC");
     if (!$db) {
         die ("<p style=\"background-color: red;color:white;\">Connection failed: " . mysqli_connect_error() . "</p> <br>");
     } 
 
-        
+    //Luam numarul paginii scris in adresa URl a paginii arhivei    
+    $page=$_GET["page"];
 
-
+    if($page=="" || $page=="1")
+    {
+        $page1=0;
+    }
          
-    $counter = "SELECT * FROM form order by id desc; ";
+    else {
+        $page1 = ($page+5) - 5;
+         }     
+    $counter = "SELECT * FROM form order by added desc limit $page1,20; ";
 
     $result = mysqli_query ($db, $counter);
 
+
+  
+              
     if (mysqli_num_rows ($result) > 0) {
-        $ind=1;
+        //Algoritmul folosit pentru a se afisa indexul potrivit fiecarui eveniment
+        $ind=($page-1)*20 + 1;
         while ($row = mysqli_fetch_assoc ($result)) {
            echo "<article class=\"mySlides\" style=\"display:block;\"><br>  
                     <HR WIDTH=98%; SIZE=10; COLOR=grey><br>
@@ -93,16 +104,38 @@ session_start();
                     <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
                     <p>" . $row["descriere"] . " <br> " . $ind."</p> 
                   </article>";
-
+            echo "<br>";
             $ind++;
             }
         }
 
-            
-               
-                
+    $counter2 = "SELECT * FROM form ; " ;
+    $res1 = mysqli_query($db, $counter2);
+
+    //Aflam numarul evenimentelor din baza de date
+    $cou = mysqli_num_rows($res1);
+
+    //Aflam numarul paginilor de va avea arhiva 
+    $a = $cou/20;
+    $a = ceil($a); 
 
 
+    //Afisarea listei paginilor in partea de jos a paginii 
+    for($b=1; $b <= $a ; $b++)
+    {
+        ?><a href="arhiva.php?page=<?php echo $b; ?>" style="text-decoration:none "><?php echo $b." "; ?></a> <?php
+    }
+
+    //this is for counting number of page
+   /* $cou = "SELECT count(id) FROM form;" ;  
+    $res = mysql_query($db,$cou);  
+    $a = $res/20;
+    echo $cou;
+
+            */
+
+
+    //Deconectarea de la baza de date          
     mysqli_close($db);
          
 ?>          
