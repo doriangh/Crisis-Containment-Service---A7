@@ -76,7 +76,7 @@ session_start();
 
     //Luam numarul paginii scris in adresa URl a paginii arhivei    
     
-    $exist = 
+ 
 
     $page1=0;
     $page=$_GET["page"];
