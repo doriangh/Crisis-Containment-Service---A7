@@ -56,28 +56,56 @@
 
  <div class="sectiune_text">
      <br>
-     
-     
-     
-     
 
-     <div class="articol">
-         
-        
+<form method="post" action="arhiva.php">
+    <input type="text" name="q" placeholder="Cautati in arhiva...">
+    <select name="column">
+        <option value="">Selectati filtrul </option>
+        <option value="nume">Nume utilizator</option>
+        <option value="prenume">Prenume utilizator </option>
+        <option value="oras">Oras eveniment</option>
+       <!-- <option value="report">Numar reporturi</option> -->
+    </select>
+    <input type="submit" name="submit" value="Cauta">
+     
+<div class="articol">
+
+
+
+
+
 <?php
         
 session_start();
-     
+
     //Conectarea la baza noastra de date si la localhost
     $db = mysqli_connect ("golar3.go.ro", "tw", "59885236", "CriC");
     if (!$db) {
         die ("<p style=\"background-color: red;color:white;\">Connection failed: " . mysqli_connect_error() . "</p> <br>");
     } 
 
+  
+//Filtrarea evenimentelor dupa interes
+    /* if(isset($_POST['submit'])){
+        $connection = new mysqli("golar3.go.ro", "tw", "59885236", "CriC");
+        $q = $connection->real_escape_string($_POST['q']);
+        $column = $connection->real_escape_string($_POST['column']);
+
+        if($column == "" || ($column != "nume" && $column !='prenume'))
+        $column="nume";
+
+        $sql = $connection->query("SELECT nume FROM form WHERE $column LIKE '%q%' ");
+        if($sql->num_rows >0){
+            while($data = $sql->fetch_array());
+            echo $data['nume'] . "<br>";
+        }
+        else echo "Nu se gaseste nici un eveniment cu aceasta cautare !";
+    }
+*/
+
+
     //Luam numarul paginii scris in adresa URl a paginii arhivei    
     
- 
-
     $page1=0;
     if (isset($_GET['page']))
         $page=$_GET['page'];
@@ -131,6 +159,8 @@ session_start();
     {
         ?><a href="arhiva.php?page=<?php echo $b; ?>" style="text-decoration:none "><?php echo $b." "; ?></a> <?php
     }
+
+
 
     //this is for counting number of page
    /* $cou = "SELECT count(id) FROM form;" ;  
