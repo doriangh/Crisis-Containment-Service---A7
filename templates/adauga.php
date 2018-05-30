@@ -56,6 +56,7 @@
         $sesizari = htmlspecialchars($_POST['sesizari']);
         $descriere = htmlspecialchars($_POST['descriere']);
         //$director = addslashes (file_get_contents($_FILES['imagine']['tmp_name']));
+        $categorie=htmlspecialchars($_POST['categorie']);
         
         
         $data_arr = geocode ($_POST['adresa']);
@@ -82,7 +83,7 @@
         $update = "ALTER TABLE form AUTO_INCREMENT = $max4";
         mysqli_query ($db, $update);
         
-        $sql = "INSERT INTO form (nume, prenume, adresa, sesizari, descriere, latitude, longitude) VALUES ('$nume', '$prenume', '$data_arr[2]', '$sesizari', '$descriere',  '$data_arr[0]', '$data_arr[1]')";
+        $sql = "INSERT INTO form (nume, prenume, adresa, sesizari, descriere, latitude, longitude,filter) VALUES ('$nume', '$prenume', '$data_arr[2]', '$sesizari', '$descriere',  '$data_arr[0]', '$data_arr[1]', '$categorie')";
 
         mysqli_query ($db, $sql);
 
