@@ -163,8 +163,8 @@ session_start();
     $first = "SELECT * FROM form WHERE ID = $maxim";
     $qfirst = mysqli_query ($db, $first);
     $ifirst = mysqli_fetch_assoc ($qfirst);
-         
-	$ghilimele='"';	 	 
+
+
 	if($ifirst["images"]){
 		if ($ifirst["report"] <= 4)
 		{
@@ -173,7 +173,7 @@ session_start();
 				<p style=\"background-color:green;color:white;\">Eveniment de Incredere</p>
 				<h3>" . $ifirst["sesizari"] . "</h3>
 				<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
-				<img src=" . $ghilimele . " templates/uploads/". $ifirst["images"]  . $ghilimele . " style=" . $ghilimele . "width:400px;height:400px" . $ghilimele . " />
+				<img src=\"templates/uploads/" . $ifirst["images"] . " \" style=\"width:100%;height:50%\" />
 				<p>" . $ifirst["descriere"] . "</p> </article>";
 			
 		} else if ($ifirst["report"] <= 9) {
@@ -183,7 +183,7 @@ session_start();
 				<p style=\"background-color:yellow;color:black;\">Eveniment Potential Incorect</p>
 				<h3>" . $ifirst["sesizari"] . "</h3>
 				<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
-				<img src=" . $ghilimele . " templates/uploads/". $ifirst["images"]  . $ghilimele . " style=" . $ghilimele . "width:400px;height:400px" . $ghilimele . " />
+				<img src=\"templates/uploads/" . $ifirst["images"] . " \" style=\"width:100%;height:50%\" />
 				<p>" . $ifirst["descriere"] . "</p> </article>";
 			
 		} else {
@@ -193,7 +193,7 @@ session_start();
 				<p style=\"background-color:red;color:white;\">Eveniment Incorect</p>
 				<h3>" . $ifirst["sesizari"] . "</h3>
 				<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
-				<img src=" . $ghilimele . " templates/uploads/". $ifirst["images"]  . $ghilimele . " style=" . $ghilimele . "width:400px;height:400px" . $ghilimele . " />
+				<img src=\"templates/uploads/" . $ifirst["images"] . " \" style=\"width:100%;height:50%\" />
 				<p>" . $ifirst["descriere"] . "</p> </article>";
 		}
 	}
@@ -243,7 +243,7 @@ session_start();
 						<p style=\"background-color:green;color:white;\">Eveniment de Incredere</p>
 						<h3>" . $row["sesizari"] . "</h3>
 						<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
-						<img src=" . $ghilimele . " templates/uploads/". $row["images"]  . $ghilimele . " style=" . $ghilimele . "width:400px;height:400px" . $ghilimele . " />
+						<img src=\"templates/uploads/" . $row["images"] . " \" style=\"width:100%;height:50%\" />
 						<p>" . $row["descriere"] . "</p> </article>";
 					
 				} else if ($row["report"] <= 9) {
@@ -253,7 +253,7 @@ session_start();
 						<p style=\"background-color:yellow;color:black;\">Eveniment Potential Incorect</p>
 						<h3>" . $row["sesizari"] . "</h3>
 						<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
-						<img src=" . $ghilimele . " templates/uploads/". $row["images"]  . $ghilimele . " style=" . $ghilimele . "width:400px;height:400px" . $ghilimele . " />
+						<img src=\"templates/uploads/" . $row["images"] . " \" style=\"width:100%;height:50%\" />
 						<p>" . $row["descriere"] . "</p> </article>";
 					
 				} else {
@@ -263,7 +263,7 @@ session_start();
 						<p style=\"background-color:red;color:white;\">Eveniment Incorect</p>
 						<h3>" . $row["sesizari"] . "</h3>
 						<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
-						<img src=" . $ghilimele . " templates/uploads/". $row["images"]  . $ghilimele . " style=" . $ghilimele . "width:400px;height:400px" . $ghilimele . " />
+						<img src=\"templates/uploads/" . $row["images"] . " \" style=\"width:100%;height:50%\" />
 						<p>" . $row["descriere"] . "</p> </article>";
 					
 				}
