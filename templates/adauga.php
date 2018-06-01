@@ -146,9 +146,28 @@ if(isset($_POST["submit"])) {
 		}
         mysqli_query ($db, $sql);
 
-        
+        if($uploadOk == 0) {
+            $fileName = 'sendmail.php';
+            $nume = str_replace(" ", "+", $nume);
+            $prenume = str_replace(" ", "+", $prenume);
+            $address = str_replace(" ", "+", $address);
+            $sesizari = str_replace(" ", "+", $sesizari);
+            $descriere = str_replace(" ", "+", $descriere);
+            exec ("php -f {$fileName} {$nume} {$prenume} {$address} {$sesizari} {$descriere} > nul 2>&1 &");
+        }
+        else {
+            $fileName = 'sendmail.php';
+            $nume = str_replace(" ", "+", $nume);
+            $prenume = str_replace(" ", "+", $prenume);
+            $address = str_replace(" ", "+", $address);
+            $sesizari = str_replace(" ", "+", $sesizari);
+            $descriere = str_replace(" ", "+", $descriere);
+            $target_file = str_replace(" ", "+", $target_file);
+            exec ("php -f {$fileName} {$nume} {$prenume} {$address} {$sesizari} {$descriere} {$target_file} > nul 2>&1 &");
+        }
+
         header ('Location: ../index.php');
-        
+
         
         
     } else {
