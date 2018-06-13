@@ -48,6 +48,16 @@
         }
     }
 
+
+    $trigger = "CREATE TRIGGER `updateReport`
+                BEFORE INSERT ON `form` FOR EACH ROW
+                BEGIN
+	               UPDATE `report` SET `slide` = `slide` + 1;
+                END;";
+
+    mysqli_query($db, $trigger);
+
+
 	$target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
@@ -136,8 +146,19 @@ if(isset($_POST["submit"])) {
 
     if ($latitude != 0 || $longitude != 0){
         
-        $update = "ALTER TABLE form AUTO_INCREMENT = $max4";
-        mysqli_query ($db, $update);
+         /*Stergem coloana ID*/
+        $updatetable = "ALTER TABLE `form` DROP COLUMN `ID`;";
+        mysqli_query ($db, $updatetable);
+        $commit = "COMMIT;";
+        mysqli_query ($db, $commit);
+        
+        /*Recreem coloana ID pentru a reinitializa indexul*/
+        $updateindex = "ALTER TABLE `form` ADD column ID int primary key AUTO_INCREMENT;";
+        mysqli_query ($db, $updateindex);
+        
+        $commit2 = "COMMIT;";
+        mysqli_query ($db, $commit2);
+        
         if($uploadOk == 0){
         $sql = "INSERT INTO form (nume, prenume, adresa, sesizari, descriere, latitude, longitude,filter) VALUES ('$nume', '$prenume', '$data_arr[2]', '$sesizari', '$descriere',  '$data_arr[0]', '$data_arr[1]', '$categorie')";
 		}

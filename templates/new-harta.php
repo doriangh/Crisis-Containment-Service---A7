@@ -8,23 +8,30 @@
     <title>Harta</title>
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <link rel="stylesheet" type="text/css" href="../styles/harta.css">
+    <script type="text/javascript" src="../scripts/sidebar.js"></script>
    
   </head>
   <body>
       
-      <div class="topnav">
-            <a href="../index.php">Acasa</a>
-            <a href="../templates/inundatii.html">Inundatii</a>
-            <a href="../templates/cutremure.html">Cutremure</a>
-            <a href="../templates/incendii.html">Incendii</a>
-            <a href="../templates/arhiva.php">Arhiva</a>
-            <a class="active" href="../templates/new-harta.php">Harta</a>
-            <a href="../templates/adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
-         
-            <form id="searchBtn" class="top-form" action="../templates/search-map.html" method="GET">
+     <!-- Meniul -->
+    <div class="topnav" >
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Meniu</span>
+        
+          <form id="searchBtn" class="top-form" action="../templates/search-map.html" method="GET">
                 <input id="adresa" class="search" type="text" name="city" placeholder="Cauta Oras..." required >
                 <input class="button-top" type="submit" value="Cauta">
             </form>
+    </div>
+    
+     <div class="sidenav" id="meniu">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a class="active" href="../index.php">Acasă</a>
+            <a href="../templates/inundatii.html">Inundații</a>
+            <a href="../templates/cutremure.html">Cutremure</a>
+            <a href="../templates/incendii.html">Incendii</a>
+            <a href="../templates/arhiva.php">Arhivă</a>
+            <a href="../templates/new-harta.php">Hartă</a>
+            <a href="../templates/adauga.html" class="button" style="color: white;font-size: 20px;width: 100%;margin-left: 5px;">+ Adaugă Eveniment</a>
         </div>
       
 <div class="main">

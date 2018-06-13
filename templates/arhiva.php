@@ -5,8 +5,8 @@
     <meta name="description" content="Crisis Containment Service">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-  <title>Arhiva</title>
-  <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <title>Arhiva</title>
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
 
     <script src="../scripts/slide-show.js" type="text/javascript"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
@@ -15,31 +15,37 @@
     
     <meta name="google-signin-client_id" content="580134955331-dsvnpsi07grklncod32u8cj2j13hm826.apps.googleusercontent.com"> 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-  <script src="https://apis.google.com/js/api:client.js"></script>
+    <script src="https://apis.google.com/js/api:client.js"></script>
     
     <script type="text/javascript" src="../google.js"></script>
+    
+    <script type="text/javascript" src="../scripts/sidebar.js"></script>
 
     
 </head>
 <body>
     
-     <div class="topnav">
-            <a href="../index.php">Acasa</a>
-            <a href="../templates/inundatii.html">Inundatii</a>
-            <a href="../templates/cutremure.html">Cutremure</a>
-            <a href="../templates/incendii.html">Incendii</a>
-            <a class="active"  href="../templates/arhiva.php">Arhiva</a>
-            <a href="../templates/new-harta.php">Harta</a>
-            <a href="../templates/adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
-         
-            <form id="searchBtn" class="top-form" action="../templates/search-map.html" method="GET">
+     <!-- Meniul -->
+    <div class="topnav" >
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Meniu</span>
+        
+          <form id="searchBtn" class="top-form" action="../templates/search-map.html" method="GET">
                 <input id="adresa" class="search" type="text" name="city" placeholder="Cauta Oras..." required >
                 <input class="button-top" type="submit" value="Cauta">
-               
-
-        
             </form>
+    </div>
+    
+     <div class="sidenav" id="meniu">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a class="active" href="../index.php">Acasă</a>
+            <a href="../templates/inundatii.html">Inundații</a>
+            <a href="../templates/cutremure.html">Cutremure</a>
+            <a href="../templates/incendii.html">Incendii</a>
+            <a href="../templates/arhiva.php">Arhivă</a>
+            <a href="../templates/new-harta.php">Hartă</a>
+            <a href="../templates/adauga.html" class="button" style="color: white;font-size: 20px;width: 100%;margin-left: 5px;">+ Adaugă Eveniment</a>
         </div>
+
     
 <div class="main">
     

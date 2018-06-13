@@ -7,21 +7,10 @@ session_start();
     if (!$db) {
         die ("Connection failed: " . mysqli_connect_error());
     } 
-//    else {
-//        echo('Success');
-//    }
-
-
-
-
-//    print_r($_FILES);
-//    print_r($_POST);
 
     $id = $_POST["id"];
     $name = $_POST["name"];
     $slide = $_POST["slide"];
-        
-//     echo $id . ' ' . $name . ' ' . $slide . ' ';
 
     $checkid = "SELECT id FROM report WHERE id = '$id'";
     
@@ -42,47 +31,60 @@ session_start();
 
     $valmax = mysqli_query ($db, $max);
     $result = mysqli_fetch_assoc ($valmax);
-//    echo $result;
+
 
     $test[] = $result["id"];
-//    print_r($test[0]);
+
 
     $val = $test[0] + 1;
 
-//    echo $val . ' ' . $slide;
-//
-//
-//    $testing = "SELECT * FROM form where ID = ($val - $slide);";
-//    $valtest = mysqli_query ($db, $testing);
-//    $resulttest = mysqli_fetch_assoc ($valtest);
-//    
-//    echo '       fdaf   ' . $resulttest["ID"] . ' ' . $resulttest["nume"];
-// 
+    $curr = $val - $slide;
 
+    /*Luam numarul de reporturi de la articolul curent*/
+    $report = "SELECT report FROM form WHERE id = '$curr'";
+    $checkreport = mysqli_query ($db, $report);
+    $resultreport = mysqli_fetch_assoc ($checkreport);
+    $testreport = $resultreport["report"];
 
-
-
-
-
-   if ($valname->num_rows && $valslide->num_rows){
-       echo "<script> alert('Ati raportat deja!');
-               window.location.href='../index.php'</script>";
-
-   }else{
-       
-       $sql = "INSERT INTO report (id, name, slide) VALUES ('$id', '$name', '$slide')";
-       mysqli_query ($db, $sql);
-       
-       $sql2 = "UPDATE form SET report = (report + 1) WHERE ID = ($val - $slide);";
-       mysqli_query ($db, $sql2);
-
-       echo "<script> alert('Ati raportat cu succes articolul " . $slide . "');
-               window.location.href='../index.php'</script>";
-
-   }
-
-        
-
+    if ($valname->num_rows && $valslide->num_rows){
+          echo "<script> alert('Ati raportat deja!');
+                   window.location.href='../index.php'</script>";
+    } else {
     
+    /*Verificam daca are mai putin de 21 de reporturi */
+    if ($testreport >= 20){
+        
+        /*Stergem articolul*/
+        $deletearticle = "DELETE FROM form WHERE ID = '$curr'";
+        mysqli_query ($db, $deletearticle);
+        
+        /*Stergem coloana ID*/
+        $updatetable = "ALTER TABLE `form` DROP COLUMN `ID`;";
+        mysqli_query ($db, $updatetable);
+        $commit = "COMMIT;";
+        mysqli_query ($db, $commit);
+        
+        /*Recreem coloana ID pentru a reinitializa indexul*/
+        $updateindex = "ALTER TABLE `form` ADD column ID int primary key AUTO_INCREMENT;";
+        mysqli_query ($db, $updateindex);
+        
+        $commit2 = "COMMIT;";
+        mysqli_query ($db, $commit2);
+        
+        echo "<script> alert('Ati raportat cu succes! Articolul a capatat mai mult de 20 de reporturi si a fost sters.');window.location.href='../index.php'</script>";
+    
+       }else{
+
+           $sql = "INSERT INTO report (id, name, slide) VALUES ('$id', '$name', '$slide')";
+           mysqli_query ($db, $sql);
+
+           $sql2 = "UPDATE form SET report = (report + 1) WHERE ID = ($val - $slide);";
+           mysqli_query ($db, $sql2);
+
+           echo "<script> alert('Ati raportat cu succes articolul " . $slide . "');
+                   window.location.href='../index.php'</script>";
+
+       }
+    }
 
 ?>

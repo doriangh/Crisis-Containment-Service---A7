@@ -20,25 +20,31 @@
     
     <script type="text/javascript" src="../google.js"></script>
     
+    <script type="text/javascript" src="scripts/sidebar.js"></script>
+    
 
 </head>
     
 <body>
     <!-- Meniul -->
-     <div class="topnav">
-            <a class="active" href="../index.php">Acasa</a>
-            <a href="../templates/inundatii.html">Inundatii</a>
-            <a href="../templates/cutremure.html">Cutremure</a>
-            <a href="../templates/incendii.html">Incendii</a>
-            <a href="../templates/arhiva.php">Arhiva</a>
-            <a href="../templates/new-harta.php">Harta</a>
-            <a href="../templates/adauga.html" class="button" style="color: white;font-size: 15px;width: 170px;margin-left: 5px;">+Adauga Eveniment</a>
-         
-            <form id="searchBtn" class="top-form" action="../templates/search-map.html" method="GET">
-<!--                <script type="text/javascript" src="../scripts/search-autocomplete.js"></script>-->
+    <div class="topnav" >
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Meniu</span>
+        
+          <form id="searchBtn" class="top-form" action="../templates/search-map.html" method="GET">
                 <input id="adresa" class="search" type="text" name="city" placeholder="Cauta Oras..." required >
                 <input class="button-top" type="submit" value="Cauta">
             </form>
+    </div>
+    
+     <div class="sidenav" id="meniu">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a class="active" href="../index.php">Acasă</a>
+            <a href="../templates/inundatii.html">Inundații</a>
+            <a href="../templates/cutremure.html">Cutremure</a>
+            <a href="../templates/incendii.html">Incendii</a>
+            <a href="../templates/arhiva.php">Arhivă</a>
+            <a href="../templates/new-harta.php">Hartă</a>
+            <a href="../templates/adauga.html" class="button" style="color: white;font-size: 20px;width: 100%;margin-left: 5px;">+ Adaugă Eveniment</a>
         </div>
     
 <div class="main">
@@ -80,77 +86,6 @@ session_start();
 -->
      
      <div class="articol">
-         
-         <!-- Sign In/Up (Maybe) -->
-<!--
-   <div class="clearfix">  
-         <button onclick="document.getElementById('login').style.display='block'; var modal=document.getElementById('login');" style="width:auto;">Login</button>
-
-         <div id="login" class="modal">
-             
-             <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
-
-             <form class="modal-content animate">
-
-                <div class="container">
-
-                    <label for="uname"><b>Username</b></label>
-                    <input type="textbox" placeholder="Enter Username" name="uname" required>
-
-                    <label for="pwd"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="pwd" required>
-
-                    <button type="submit">Login</button>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember">Remember Me
-                    </label>
-
-                 </div>
-
-             </form>
-
-         </div>
-       
-       
-       
-       <button onclick="document.getElementById('signup').style.display='block'" style="width:auto;">Sign Up</button>
-       
-       <div id="signup" class="modal">
-       
-           <span onclick="document.getElementById('signup').style.display='none'; var modal = document.getElementById('signup');" class="close" title="Close Modal">&times;</span>
-           
-           <form class="modal-content animate">
-            
-                <div class="container">
-                
-                    <h1>Sign Up</h1>
-                    <span>Please fill in the form</span>
-                    <hr>
-                    <label for="email"><b>Email</b></label>
-                    <input type="textbox" placeholder="Enter Email" name="email" required>
-                    
-                    <label for="pwd"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="pwd" required>
-                    
-                    <label for="pwd-repeat"><b>Repeat Password</b></label>
-                    <input type="password" placeholder="Repeat Password" name="pwd-repeat" required>
-                    
-                    <div class="clearfix">
-                    
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                        <button type="submit" class="adaugabtn">Sign Up</button>
-                    
-                    </div>
-                    
-                </div>
-           
-           </form>
-       
-       
-       </div>
-       
-     </div>
--->
         
 <?php
     
@@ -333,9 +268,9 @@ session_start();
          
          
          
-         <button class="test-btn black-btn left-display-btn" onclick="plusDivs(-1)">&#10094;</button>
+         <button class="nav-btn black-btn left-display-btn" onclick="plusDivs(-1)">&#10094;</button>
          
-         <button class="test-btn black-btn right-display-btn" onclick="plusDivs(1)">&#10095;</button>
+         <button class="nav-btn black-btn right-display-btn" onclick="plusDivs(1)">&#10095;</button>
          
          
      </div>
@@ -364,24 +299,6 @@ session_start();
      </form> 
     <br>
      
- 
-<!-- Sign In/Up Exit (Maybe) -->
-<!--
-       <script>
-           
-           window.onclick = function(event) {
-               if (event.target == document.getElementById('login')) {
-                   document.getElementById('login').style.display = "none";
-               } else
-                if (event.target == document.getElementById('signup')) {
-                    document.getElementById('signup').style.display = "none";
-                }
-           }
-           
-       </script>
--->
-     
-     
     </div>
 
  	<footer> 
@@ -389,7 +306,6 @@ session_start();
  	</footer>
 
     </div>
-    
     
 </body>
 </html>
