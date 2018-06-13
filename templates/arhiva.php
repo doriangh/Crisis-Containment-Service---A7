@@ -173,19 +173,35 @@ if(isset($_GET['tip']) && $_GET['tip']!=".")
 
 
         while ($row = mysqli_fetch_assoc ($result)) {
+		if($row["images"]){
            echo "<article class=\"mySlides\" style=\"display:block;\"><br>  
                     <HR WIDTH=98%; SIZE=10; COLOR=grey><br>
-                    
                     <h5 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h5>
                     <h3>" . $row["sesizari"] . "</h3>
                     <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
-                    <p>" . $row["descriere"] . " <br> " . $ind." Si are id-ul : " . $row["ID"] ."</p> 
+					<img src=\"templates/uploads/" . $ifirst["images"] . " \" style=\"width:100%;height:50%\" />
+                    <p>" . $row["descriere"] . " <br> " . $ind." </p> 
                   </article>";
             echo "<br>";
 			if($ind%10==0)break;
             $ind++;
 			$last=$row["ID"];
 			}
+			else
+			{
+			echo "<article class=\"mySlides\" style=\"display:block;\"><br>  
+                    <HR WIDTH=98%; SIZE=10; COLOR=grey><br>
+                    <h5 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h5>
+                    <h3>" . $row["sesizari"] . "</h3>
+                    <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
+                    <p>" . $row["descriere"] . " <br> " . $ind." </p> 
+                  </article>";
+            echo "<br>";
+			if($ind%10==0)break;
+            $ind++;
+			$last=$row["ID"];	
+			}
+		}
 	if(isset($_POST['submit']) && $currentpage==1)
         {
           if($_POST['values'] == 'cutremure')
