@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
     <meta name="description" content="Crisis Containment Service">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-	<title>Arhiva</title>
-	<link rel="stylesheet" type="text/css" href="../styles/style.css">
+  <title>Arhiva</title>
+  <link rel="stylesheet" type="text/css" href="../styles/style.css">
 
     <script src="../scripts/slide-show.js" type="text/javascript"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
@@ -58,13 +58,12 @@
      <br>
 
 <form method="post" action="arhiva.php">
-    <input type="text" name="q" placeholder="Cautati in arhiva...">
-    <select name="column">
+    <select name="values">
         <option value="">Selectati filtrul </option>
-        <option value="nume">Nume utilizator</option>
-        <option value="prenume">Prenume utilizator </option>
-        <option value="oras">Oras eveniment</option>
-       <!-- <option value="report">Numar reporturi</option> -->
+        <option value="cutremure">Cutremure</option>
+        <option value="incendii">Incendii </option>
+        <option value="inundatii">Inundatii</option>
+        <option value="other">Other</option>
     </select>
     <input type="submit" name="submit" value="Cauta">
      
@@ -73,39 +72,59 @@
 
 
 
-
 <?php
         
 session_start();
-
     //Conectarea la baza noastra de date si la localhost
     $db = mysqli_connect ("golar3.go.ro", "tw", "59885236", "CriC");
     if (!$db) {
         die ("<p style=\"background-color: red;color:white;\">Connection failed: " . mysqli_connect_error() . "</p> <br>");
     } 
-
   
-//Filtrarea evenimentelor dupa interes
-    /* if(isset($_POST['submit'])){
-        $connection = new mysqli("golar3.go.ro", "tw", "59885236", "CriC");
-        $q = $connection->real_escape_string($_POST['q']);
-        $column = $connection->real_escape_string($_POST['column']);
+ //Filtrarea evenimentelor dupa interes
+        $sql = " SELECT * from form";
 
-        if($column == "" || ($column != "nume" && $column !='prenume'))
-        $column="nume";
+ if(isset($_POST['submit']))
+        {
+          if($_POST['values'] == 'cutremure')
+          {
+              $sql  = "SELECT * FROM form WHERE filter='cutremure' ";
+          } 
+          elseif ($_POST['values'] == 'inundatii') {
+             $sql  = "SELECT * FROM form WHERE filter='inundatii' ";
+         }
+          elseif ($_POST['values'] == 'incendii') {
+             $sql  = "SELECT * FROM form WHERE filter='incendii' ";
+         }
+          elseif ($_POST['values']=='other'){
+             $sql  = "SELECT * FROM form WHERE filter='other' ";
+         }
+          else{
+        $sql = " SELECT * from form";
+      }
+      }
+     
 
-        $sql = $connection->query("SELECT nume FROM form WHERE $column LIKE '%q%' ");
-        if($sql->num_rows >0){
-            while($data = $sql->fetch_array());
-            echo $data['nume'] . "<br>";
-        }
-        else echo "Nu se gaseste nici un eveniment cu aceasta cautare !";
+     $sql .= " order by added desc ";
+    $result = mysqli_query ($db, $sql);
+
+    //Stabilim cate linii vrem sa fie afisate pe pagina
+    $rowperpage = 10;
+
+    //Aflam numarul evenimentelor(liniilor) din baza de date
+    $cou = mysqli_num_rows($result);
+    echo $cou." ";
+
+    //Aflam numarul total al paginilor
+    $totalpages = $cou / $rowperpage;
+    $c=$cou % $rowperpage;
+    if($c)
+    {     
+         $totalpages= $totalpages+1;
     }
-*/
 
 
     //Luam numarul paginii scris in adresa URl a paginii arhivei    
-    
     $page1=0;
     if (isset($_GET['page']))
         $page=$_GET['page'];
@@ -119,16 +138,44 @@ session_start();
     else {
         $page1 = ($page+5) - 5;
          }     
-    $counter = "SELECT * FROM form order by added desc limit $page1,20; ";
-
+    $counter = "SELECT * FROM form order by added desc limit $page1,10; ";
     $result = mysqli_query ($db, $counter);
-
-
   
               
     if (mysqli_num_rows ($result) > 0) {
+
+      //Obtine pagina curenta 
+        if(isset($_GET['currentpage']) && is_numeric($_GET['currentpage'])) {
+          $currentpage = (int) $_GET['currentpage'];  
+        }
+        else{
+          //pagina de start a arhivei
+          $currentpage = 1;
+        }
+
+
+        //Verificam daca pagina curenta are numarul mai mare decat numarul total de pagini
+        if($currentpage > $totalpages){
+          //setam pagina curenta la ultima pagina
+          $currentpage = $totalpages;
+        }
+
+        //Verificam daca pagina curenta e mai mica decat prima pagina
+        if($currentpage < 1){
+          //setam pagina la prima pagina 
+          $currentpage = 1;
+        }
+
+        //Lista de pagini, in functie de pagina curenta
+        $offset = ($currentpage - 1) * $rowperpage;
+
+
+
         //Algoritmul folosit pentru a se afisa indexul potrivit fiecarui eveniment
-        $ind=$page1*20 + 1;
+        if($page1 == 0) $ind = 1;
+          else     $ind=($page1-1)*10 + 1;
+
+
         while ($row = mysqli_fetch_assoc ($result)) {
            echo "<article class=\"mySlides\" style=\"display:block;\"><br>  
                     <HR WIDTH=98%; SIZE=10; COLOR=grey><br>
@@ -142,34 +189,14 @@ session_start();
             $ind++;
             }
         }
-
     $counter2 = "SELECT * FROM form ; " ;
     $res1 = mysqli_query($db, $counter2);
-
     //Aflam numarul evenimentelor din baza de date
-    $cou = mysqli_num_rows($res1);
-
-    //Aflam numarul paginilor de va avea arhiva 
-    $a = $cou/20;
-    $a = ceil($a); 
-
-
-    //Afisarea listei paginilor in partea de jos a paginii 
-    for($b=1; $b <= $a ; $b++)
+    
+    for($b=1; $b <= $totalpages ; $b++)
     {
         ?><a href="arhiva.php?page=<?php echo $b; ?>" style="text-decoration:none "><?php echo $b." "; ?></a> <?php
     }
-
-
-
-    //this is for counting number of page
-   /* $cou = "SELECT count(id) FROM form;" ;  
-    $res = mysql_query($db,$cou);  
-    $a = $res/20;
-    echo $cou;
-
-            */
-
 
     //Deconectarea de la baza de date          
     mysqli_close($db);
@@ -224,9 +251,9 @@ session_start();
     <br>
     </div>
 
- 	<footer> 
- 		<h1><u>&copy;Tehnologii Web</u></h1>
- 	</footer>
+  <footer> 
+    <h1><u>&copy;Tehnologii Web</u></h1>
+  </footer>
 
     </div>
     
