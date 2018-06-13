@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ghid de utilizare CriC</title>
+</head>
+
+<body>
+		<header>
+			<h1>  Ghid de utilizare Crisis-Containment-Service</h1>
+		</header>
+
+			<div role="contentinfo">
+				<ol role="directory">
+					<li>
+						<a href="#abstract"> Descriere</a> 
+					</li>
+					<li>
+						<a href="#pagina_start">Pagina de start </a>
+							<ol role="directory">
+								<li>
+									<a href="#cautarelocatie">Cautare locatie </a>
+								</li>
+									
+								<li>
+									<a href="#abonare">Abonare site</a>
+								</li>
+								<li>
+									<a href="#conectare">Logare</a>
+								</li>
+								<li>
+									<a href="#noutati">Evenimente noi</a>
+								</li>
+								<li>
+									<a href="#deconectare">Deconectare</a>
+								</li>
+							</ol>
+					</li>
+					<li>
+						<a href="#pagina_inundatii">Pagina inundatii</a>
+					</li>
+					<li>
+						<a href="#pagina_cutremure">Pagina cutremure</a>
+					</li>
+					<li>
+						<a href="#pagina_incendii">Pagina incendii</a>
+					</li>
+					<li>
+						<a href="#arhiva">Arhiva evenimentelor</a>
+					</li>
+					<li>
+						<a href="#harta">Harta evenimentelor</a>
+					</li>
+					<li>
+						<a href="#adaugare">Adaugare eveniment</a>
+					</li>
+			</ol>
+		</div>
+
+
+
+					<section id="abstract" typeof="as:Abstract " role="doc-abstract">
+
+						<h2> 1. Descrierea proiectului</h2>
+						<p> Proiectul Crisis Containment Service este o platforma Web care permite gestionarea situatiilor de urgenta (e.g., cutremure, incendii, inundatii etc.) pentru oricare utilizator, comportandu-se precum un forum. Aplicatia transmite notificari si alerte populatiei (afectate direct sau in vecinatate), prin intermediul email-urilor. Utilizand Geolocation API, sistemul poate furniza automat informatii de interes pentru gasirea unei persoane disparute (e.g. atunci cand aceasta este inconstienta ori ranita) si/sau legate de eventualele adaposturi si rute de salvare. </p>
+
+					</section>
+
+
+				<section id="pagina_start" role="doc-pagina_start">
+
+						<h2> 2. Pagina de start </h2>
+						<p> Pe pagina <strong>"Acasa"</strong> ni se vor afisa ultimele 10 evenimente adaugate in baza de date, iar in partea de jos a paginii este formularul de inscriere la noutatile ce vor aparea pe site . Tot pe aceasta pagina exista box-ul din partea dreapta,sus, in care se poate completa o anumita locatie care va fi cautata pe harta. In chenarul evenimentului curent avem la dispozitie butonul de <strong>Sign in</strong> fara de care nu putem efectua <strong>Report-ul</strong>, iar cand utilizatorul este logat, acesta se poate deloga prin apasarea butonului <strong>Sign out</strong>.  </p>
+						<img src="acasa.png" class="center" alt="abonare" width="800" height="355">
+
+
+						<section id="cautarelocatie">
+							<h3> 2.1. Cautare locatie</h3>
+							<p>Optiunea de cautare locatie se afla in partea dreapta,sus si functioneaza prin completarea box-ului cu numele orasului cautat, apoi apasarea butonului <strong>"Cauta"</strong> .</p>
+							
+						</section>
+
+						<section id="abonare">
+							<h3> 2.2. Abonare site </h3>
+							<p> Formularul de abonare la aplicatia web se gaseste in partea de jos a paginii. Acesta contine <strong>email-ul</strong> utilizatorul si <strong>orasul</strong>, pentru ca aplicatia sa poata trimite alerte utilizatorului doar din orasul respectiv. Nerespectarea formatului dorit in completarea acestora, duce la afisarea unui mesaj corespunzator pe ecran.  </p>
+							<img src="abonare.png" class="center" alt="abonare" width="400" height="355">
+						</section>
+
+						<section id="conectare">
+							<h3> 2.3. Logare </h3>
+							<p> Butonul de <strong>Sign in</strong> se gaseste in sectiunea evenimentului curent afisat pe pagina de start. Logarea se realizeaza prin adresa de Gmail a utilizatorului. Dupa logarea cu succes, in titlul paginii va aparea un mesaj de bun-venit . </p>
+						</section>
+
+						<section id="noutati">
+							<h3> 2.4. Evenimente noi </h3>
+							<p> Ultimele zece evenimente adaugate in baza de date, vor putea fi vazute in pagina acasa. Pentru a trece de la un eveniment la altul, exista cele doua butoane din stanga(eveniment anterior) si din dreapta (eveniment urmator) al titlului. Tot aici, utilizatorii vor putea vedea care evenimente sunt de incredere si care nu, aplicatia verificand permanent numarul raportarilor si stabilind astfel gradul de incredere al evenimentelor introduse. </p>
+						</section>
+
+						<section id="deconectare">
+							<h3> 2.5. Deconectare</h3>
+							<p> Butonul de deconectare apare doar atunci cand utilizatorul este deja logat. Acesta va aparea in acelasi loc, in chenarul evenimentului curent pe pagina. </p>
+						</section>
+
+				</section>
+
+				<section id="pagina_inundatii" role="doc-pagina_inundatii">
+					<h2> 3. Pagina inundatii</h2>
+					<p> Pe pagina <strong>"Inundatii"</strong> utilizatorii gasesc efectele pe care acestea le pot produce in natura, dar si omenirii. Tot pe aceasta pagina utilizatorii aplicatiei web sunt invatati cum sa previna aceste catastrofe naturale si cauzele aparitiilor lor. </p>
+					<img src="inundatii.png" class="center" alt="abonare" width="800" height="355">
+				</section>
+
+				<section id="pagina_cutremure" role="doc-pagina_cutremure">
+					<h2> 4. Pagina cutremure</h2>
+					<p>  Pe pagina <strong>"Cutremure"</strong> utilizatorii gasesc efectele pe care acestea le pot produce in natura, dar si omenirii. Tot pe aceasta pagina utilizatorii aplicatiei web sunt invatati cum sa previna aceste catastrofe naturale si cauzele aparitiilor lor. </p>
+					<img src="cutremure.png" class="center" alt="abonare" width="800" height="355">
+				</section>
+
+				<section id="pagina_incendii" role="doc-pagina_incendii">
+					<h2> 5.Pagina incendii </h2>
+					<p> Pe pagina <strong>"Incendii"</strong> utilizatorii gasesc efectele pe care acestea le pot produce in natura, dar si omenirii. Tot pe aceasta pagina utilizatorii aplicatiei web sunt invatati cum sa previna aceste catastrofe naturale si cauzele aparitiilor lor. </p>
+					<img src="incendii.png" class="center" alt="abonare" width="800" height="355">
+				</section>
+
+				<section id="arhiva" role="doc-arhiva" >
+					<h2> 6. Arhiva evenimentelor</h2>
+					<p> Pagina <STRONG>"Arhiva evenimentelor"</STRONG> prezinta toate evenimentele din baza de date si informatiile fiecareia dintre ele. Acestea sunt paginate cate zece pe cate o pagina si pot fi filtrate in functie de tipul sesizarii(cutremur/inundatie/incendiu/altceva) . </p>
+					<img src="arhiva.png" class="center" alt="abonare" width="800" height="355">
+				<section >
+
+				<section id="harta" role="doc-harta">
+					<h2> 7.Harta evenimentelor</h2>
+					<p> Pe aceasta pagina se gaseste harta ce cuprinde toate evenimentele din baza de date. Acestea sunt indicate pe harta cu semnul rosu, iar facand click pe acesta, se vor afisa informatiile evenimentelor. Folosindu-se API Google Maps, aplicatia permite actonarea functiei Zoom . </p>
+					<img src="harta.png" class="center" alt="abonare" width="800" height="355">
+				</section>
+
+				<section id="adaugare" role="doc-adaugare">
+					<h2> 8.Adaugare eveniment </h2>
+					<p> Pe pagina <strong>"Adaugare eveniment"</strong> se gaseste formularul de completare pentru a insera in baza de date un nou eveniment. Utilizatorul trebuie sa completeze numele, prenumele, locatia unde s-a produs evenimentul, tipul evenimentului(cutremur/inundatie/incendiu/altceva), sesizarea si descrierea a ceea ce s-a produs. De asemenea, utilizatorul poate adauga imagini referitoare la eveniment, prin apasarea butonului <strong>"Choose File"</strong> prin care alege respectiva imagine din propriul dispozitiv folosit. Dupa completarea acestor campuri obligatorii , se apasa pe butonul <strong>"Adauga"</strong> ,iar evenimentul va fi introdus cu succes in baza de date. </p>
+					<img src="adauga.png" class="center" alt="abonare" width="500" height="355">
+				</section>
+
+					<h2> Autori </h2>
+					<ul>
+						<li typeof="sa:ContributorRole" property="schema:author">
+      						<span typeof="schema:Person" >
+        						<meta property="schema:givenName" content="Andrada-Ionela">
+        						<meta property="schema:familyName" content="Tapuc">
+        						<span property="schema:name">Tapuc Andrada-Ionela</span>
+      						</span>
+    					</li>
+    					<li typeof="sa:ContributorRole" property="schema:author">
+      						<span typeof="schema:Person" >
+        						<meta property="schema:givenName" content="Dorian">
+        						<meta property="schema:familyName" content="Olarescu">
+        						<span property="schema:name ">Olarescu Dorian</span>
+      						</span>
+    					</li>
+    					<li typeof="sa:ContributorRole" property="schema:author">
+      						<span typeof="schema:Person" >
+        						<meta property="schema:givenName" content="Constantin">
+        						<meta property="schema:familyName" content="Lungu">
+        						<span property="schema:name">Lungu Constantin</span>
+      						</span>
+    					</li>
+    					<li typeof="sa:ContributorRole" property="schema:author">
+      						<span typeof="schema:Person" >
+        						<meta property="schema:givenName" content="Alexandru">
+        						<meta property="schema:familyName" content="Iurescu">
+        						<span property="schema:name">Iurescu Alexandru</span>
+      						</span>
+    					</li>
+					</ul>
+				</section>
+
+
+					<span typeof="schema:Organization" resource="http://localhost:8000/index.php">
+  						<a href="http://localhost:8000/index.php">
+    					<span property="schema:name">CriC</span>
+  						</a>
+  						(<span property="schema:location" typeof="schema:Place">
+    					<span property="schema:address" typeof="schema:PostalAddress">
+      					<span property="schema:addressLocality">Iasi</span>,
+      					<span property="schema:addressRegion">IS</span>,
+      					<span property="schema:addressCountry">Romania</span>
+    				</span>
+  				</span>)
+			</span>	
+
+</body>
+
+</html>
