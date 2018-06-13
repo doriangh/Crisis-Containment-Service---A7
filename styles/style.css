@@ -196,7 +196,7 @@ content{
 
 /*Butonul "Cauta"*/
 .button {
-    position: fixed;
+    position: sticky;
     padding: 6px 15px;
     left: -8px;
     border: 2px solid #207cca;
