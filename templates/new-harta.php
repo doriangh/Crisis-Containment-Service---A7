@@ -31,7 +31,7 @@
             <a href="../templates/incendii.html">Incendii</a>
             <a href="../templates/arhiva.php">Arhivă</a>
             <a href="../templates/new-harta.php">Hartă</a>
-            <a href="../templates/adauga.html" class="button" style="color: white;font-size: 20px;width: 100%;margin-left: 5px;">+ Adaugă Eveniment</a>
+            <a href="../templates/adauga.html" class="button" style="color: white;font-size: 20px;width: 100%;">+ Adaugă Eveniment</a>
         </div>
       
 <div class="main">
