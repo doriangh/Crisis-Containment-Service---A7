@@ -30,6 +30,8 @@
     <div class="topnav" >
         <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Meniu</span>
         
+
+        
           <form id="searchBtn" class="top-form" action="../templates/search-map.html" method="GET">
                 <input id="adresa" class="search" type="text" name="city" placeholder="Cauta Oras..." required >
                 <input class="button-top" type="submit" value="Cauta">
@@ -94,15 +96,15 @@ session_start();
     $item = mysqli_fetch_assoc ($max);
     $maxim = $item["max(ID)"];
          
-    //Cel mai noua stire     
+    //Cea mai noua stire     
     $first = "SELECT * FROM form WHERE ID = $maxim";
     $qfirst = mysqli_query ($db, $first);
     $ifirst = mysqli_fetch_assoc ($qfirst);
 
 
 	if($ifirst["images"]){
-		if ($ifirst["report"] <= 4)
-		{
+		if ($ifirst["report"] <= 4) {
+            
 			echo "<article class=\"mySlides\"/>
 				<h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "</h6>
 				<p style=\"background-color:green;color:white;\">Eveniment de Incredere</p>
@@ -131,11 +133,11 @@ session_start();
 				<img src=\"templates/uploads/" . $ifirst["images"] . " \" style=\"width:100%;height:50%\" />
 				<p>" . $ifirst["descriere"] . "</p> </article>";
 		}
-	}
-	else
-		{
-		if ($ifirst["report"] <= 4)
-		{
+        
+    } else {
+        
+		if ($ifirst["report"] <= 4) {
+            
 			echo "<article class=\"mySlides\"/>
 				<h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "</h6>
 				<p style=\"background-color:green;color:white;\">Eveniment de Incredere</p>
@@ -161,7 +163,9 @@ session_start();
 				<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
 				<p>" . $ifirst["descriere"] . "</p> </article>";
 		}
-        } 
+    } 
+         
+    //Restul Stririlor
     $counter = "SELECT * FROM form where ID between $maxim - 9 and $maxim - 1 order by ID desc;";
 
     $result = mysqli_query ($db, $counter);
@@ -202,10 +206,10 @@ session_start();
 						<p>" . $row["descriere"] . "</p> </article>";
 					
 				}
-			}
-		else
-			{
+                
+			} else {
 				if ($row["report"] <= 4) {
+                    
 					echo "<article class=\"mySlides\" style=\"display:none;\">
 						<h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h6>
 						<p style=\"background-color:green;color:white;\">Eveniment de Incredere</p>
