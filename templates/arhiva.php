@@ -179,7 +179,7 @@ if(isset($_GET['tip']) && $_GET['tip']!=".")
                     <h5 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h5>
                     <h3>" . $row["sesizari"] . "</h3>
                     <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
-					<img src=\"templates/uploads/" . $ifirst["images"] . " \" style=\"width:100%;height:50%\" />
+					<img src=\"templates/uploads/" . $row["images"] . " \" style=\"width:100%;height:50%\" />
                     <p>" . $row["descriere"] . " <br> " . $ind." </p> 
                   </article>";
             echo "<br>";
