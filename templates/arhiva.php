@@ -88,38 +88,59 @@ session_start();
     } 
   
  //Filtrarea evenimentelor dupa interes
-        $sql = " SELECT * from form";
-
- if(isset($_POST['submit']))
+  $sql = " SELECT * from form order by added desc ";
+  if(isset($_GET['page']) && is_numeric($_GET['page'])) {
+        $currentpage = (int) $_GET['page'];  
+        //$sql= "SELECT * FROM form where added>'$data' order by added desc";
+      }
+      else
+	  {
+        $currentpage=1;
+	  }
+	  if(isset($_GET['lastIndex'])){
+	  $ultimulIndex =  $_GET['lastIndex'];
+	  $sql=" SELECT * FROM form where ID<'$ultimulIndex'-1 order by added desc";
+	  }
+	  else
+	  {
+	  $ultimulIndex=0;
+	  }
+	  
+if(isset($_POST['submit']) && $currentpage==1)
         {
           if($_POST['values'] == 'cutremure')
           {
-              $sql  = "SELECT * FROM form WHERE filter='cutremure' ";
+              $sql  = "SELECT * FROM form WHERE filter='cutremure' order by added desc";
           } 
           elseif ($_POST['values'] == 'inundatii') {
-             $sql  = "SELECT * FROM form WHERE filter='inundatii' ";
+             $sql  = "SELECT * FROM form WHERE filter='inundatii' order by added desc";
          }
           elseif ($_POST['values'] == 'incendii') {
-             $sql  = "SELECT * FROM form WHERE filter='incendii' ";
+             $sql  = "SELECT * FROM form WHERE filter='incendii' order by added desc";
          }
           elseif ($_POST['values']=='other'){
-             $sql  = "SELECT * FROM form WHERE filter='other' ";
+             $sql  = "SELECT * FROM form WHERE filter='other' order by added desc";
          }
           else{
         $sql = " SELECT * from form";
       }
       }
-     
-
-     $sql .= " order by added desc ";
+if(isset($_GET['tip']) && $_GET['tip']!=".")
+	{
+	$tipNou=$_GET['tip'];
+	$sql=" SELECT * FROM form where ID<'$ultimulIndex'-1 and filter = '$tipNou' order by added desc";
+    } 
+    //$sql .= " order by added desc ";
     $result = mysqli_query ($db, $sql);
-
+    /*if (!$result) {
+      echo "WTF";
+      die(mysqli_error($db));
+    }*/
     //Stabilim cate linii vrem sa fie afisate pe pagina
     $rowperpage = 10;
 
     //Aflam numarul evenimentelor(liniilor) din baza de date
     $cou = mysqli_num_rows($result);
-    echo $cou." ";
 
     //Aflam numarul total al paginilor
     $totalpages = $cou / $rowperpage;
@@ -143,38 +164,7 @@ session_start();
     }  
     else {
         $page1 = ($page+5) - 5;
-         }     
-    $counter = "SELECT * FROM form order by added desc limit $page1,10; ";
-    $result = mysqli_query ($db, $counter);
-  
-              
-    if (mysqli_num_rows ($result) > 0) {
-
-      //Obtine pagina curenta 
-        if(isset($_GET['currentpage']) && is_numeric($_GET['currentpage'])) {
-          $currentpage = (int) $_GET['currentpage'];  
-        }
-        else{
-          //pagina de start a arhivei
-          $currentpage = 1;
-        }
-
-
-        //Verificam daca pagina curenta are numarul mai mare decat numarul total de pagini
-        if($currentpage > $totalpages){
-          //setam pagina curenta la ultima pagina
-          $currentpage = $totalpages;
-        }
-
-        //Verificam daca pagina curenta e mai mica decat prima pagina
-        if($currentpage < 1){
-          //setam pagina la prima pagina 
-          $currentpage = 1;
-        }
-
-        //Lista de pagini, in functie de pagina curenta
-        $offset = ($currentpage - 1) * $rowperpage;
-
+         }    
 
 
         //Algoritmul folosit pentru a se afisa indexul potrivit fiecarui eveniment
@@ -183,28 +173,104 @@ session_start();
 
 
         while ($row = mysqli_fetch_assoc ($result)) {
+		if($row["images"]){
            echo "<article class=\"mySlides\" style=\"display:block;\"><br>  
                     <HR WIDTH=98%; SIZE=10; COLOR=grey><br>
-                     
                     <h5 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h5>
                     <h3>" . $row["sesizari"] . "</h3>
                     <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
-                    <p>" . $row["descriere"] . " <br> " . $ind."</p> 
+					<img src=\"templates/uploads/" . $row["images"] . " \" style=\"width:100%;height:50%\" />
+                    <p>" . $row["descriere"] . " <br> " . $ind." </p> 
                   </article>";
             echo "<br>";
+			if($ind%10==0)break;
             $ind++;
-            }
-        }
-    $counter2 = "SELECT * FROM form ; " ;
-    $res1 = mysqli_query($db, $counter2);
-    //Aflam numarul evenimentelor din baza de date
-    
-    for($b=1; $b <= $totalpages ; $b++)
-    {
-        ?><a href="arhiva.php?page=<?php echo $b; ?>" style="text-decoration:none "><?php echo $b." "; ?></a> <?php
-    }
+			$last=$row["ID"];
+			}
+			else
+			{
+			echo "<article class=\"mySlides\" style=\"display:block;\"><br>  
+                    <HR WIDTH=98%; SIZE=10; COLOR=grey><br>
+                    <h5 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h5>
+                    <h3>" . $row["sesizari"] . "</h3>
+                    <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
+                    <p>" . $row["descriere"] . " <br> " . $ind." </p> 
+                  </article>";
+            echo "<br>";
+			if($ind%10==0)break;
+            $ind++;
+			$last=$row["ID"];	
+			}
+		}
+	if(isset($_POST['submit']) && $currentpage==1)
+        {
+          if($_POST['values'] == 'cutremure')
+          {
+              $sql  = "SELECT * FROM form WHERE filter='cutremure' order by added desc";
 
-    //Deconectarea de la baza de date          
+          } 
+          elseif ($_POST['values'] == 'inundatii') {
+             $sql  = "SELECT * FROM form WHERE filter='inundatii' order by added desc";
+
+         }
+          elseif ($_POST['values'] == 'incendii') {
+             $sql  = "SELECT * FROM form WHERE filter='incendii' order by added desc";
+
+         }
+          elseif ($_POST['values']=='other'){
+             $sql  = "SELECT * FROM form WHERE filter='other' order by added desc";
+
+         }
+          else
+		  {
+        $sql = " SELECT * from form";
+		 }
+      }
+	else
+		{
+		if(isset($_GET['tip']) && $_GET['tip']!=".")
+			{
+			$tipNou=$_GET['tip'];
+			$sql=" SELECT * FROM form where filter = '$tipNou' order by added desc";
+			
+			}
+		}
+$result = mysqli_query ($db, $sql);	
+$cou = mysqli_num_rows($result);
+$totalpages = (int) ($cou / $rowperpage);
+    $c=$cou % $rowperpage;
+    if($c)
+    {     
+         $totalpages= $totalpages+1;
+    }	
+	if(isset($_GET['tip']) && $_GET['tip']!='.')
+		{
+		if($currentpage!=(int)$totalpages)
+			{
+			printf('<a href="arhiva.php?%s"><button type="button" style="background-color: red;">Next</button></a>',
+				http_build_query(array('page' => $currentpage+1, 'lastIndex' => $last, 'tip' => $_GET['tip']) + $_GET));
+			}
+		}
+	else
+    if(isset($_POST['submit']))
+      {
+	  $tipCategorie=$_POST['values'];
+	  if($currentpage!=(int)$totalpages)
+			{
+          printf('<a href="arhiva.php?%s"><button type="button" style="background-color: red;">Next</button></a>',
+			http_build_query(array('page' => $currentpage+1, 'lastIndex' => $last, 'tip' => $tipCategorie) + $_GET));
+			}
+      }
+      else
+	  {
+		  if($currentpage!=(int)$totalpages)
+		  {
+			  //<a href="../index.php">
+			printf('<a href="arhiva.php?%s"><button type="button" style="background-color: red;">Next</button></a>',
+			  http_build_query(array('page' => $currentpage+1, 'lastIndex' => $last, 'tip' => '.') + $_GET));
+		  }
+	  }
+    
     mysqli_close($db);
          
 ?>          
