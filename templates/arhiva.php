@@ -127,12 +127,8 @@ if(isset($_GET['tip']) && $_GET['tip']!=".")
 	$tipNou=$_GET['tip'];
 	$sql=" SELECT * FROM form where ID<'$ultimulIndex'-1 and filter = '$tipNou' order by added desc";
     } 
-    //$sql .= " order by added desc ";
     $result = mysqli_query ($db, $sql);
-    /*if (!$result) {
-      echo "WTF";
-      die(mysqli_error($db));
-    }*/
+
     //Stabilim cate linii vrem sa fie afisate pe pagina
     $rowperpage = 10;
 
@@ -262,7 +258,6 @@ $totalpages = (int) ($cou / $rowperpage);
 	  {
 		  if($currentpage!=(int)$totalpages)
 		  {
-			  //<a href="../index.php">
 			printf('<a href="arhiva.php?%s"><button type="button" style="background-color: red;">Next</button></a>',
 			  http_build_query(array('page' => $currentpage+1, 'lastIndex' => $last, 'tip' => '.') + $_GET));
 		  }
@@ -271,32 +266,15 @@ $totalpages = (int) ($cou / $rowperpage);
     mysqli_close($db);
          
 ?>          
-      
-           
-        <p id="status" style="display:none"></p>
- 
-        
-         
-        
+                 
+    <p id="status" style="display:none"></p>
          <div class="clearfix">
-           
-         
-      <form action="../report.php" method="POST" id="rep">
-             <input id="id" style="display:none;" name="id">
-             <input id="name" style="display:none" name="name">
-         </form>
-             
-
+			<form action="../report.php" method="POST" id="rep">
+				<input id="id" style="display:none;" name="id">
+				<input id="name" style="display:none" name="name">
+			</form>
          </div>
-         
-         
-    
-         
      </div>
-     
-     
-       
-     
      
      <form style="border: 1px solid #ccc" class="signup-form" method="POST" action="../templates/signup.php">
          <div class="containter">
@@ -304,11 +282,9 @@ $totalpages = (int) ($cou / $rowperpage);
             <hr>
          
          <input class="signup-input" type="email" placeholder="Email" name="email" required>
-        
-             
+                 
          <input class="signup-input" type="text" placeholder="Oras" name="oras" required>
     
-         
          <div class="clearfix">
              
             <button type="submit" class="adaugabtn" name="sign-up" style="border:1px">Sign Up</button>
@@ -323,9 +299,7 @@ $totalpages = (int) ($cou / $rowperpage);
   <footer> 
     <h1><u>&copy;Tehnologii Web</u></h1>
   </footer>
-
     </div>
-    
     
 </body>
 </html>
