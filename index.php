@@ -106,7 +106,7 @@ session_start();
 		if ($ifirst["report"] <= 4) {
             
 			echo "<article class=\"mySlides\"/>
-				<h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "</h6>
+				<h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "<br>Tipul Evenimentului: " . $ifirst["filter"] . "</h6>
 				<p style=\"background-color:green;color:white;\">Eveniment de Incredere</p>
 				<h3>" . $ifirst["sesizari"] . "</h3>
 				<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
@@ -116,7 +116,7 @@ session_start();
 		} else if ($ifirst["report"] <= 9) {
 			
 			echo "<article class=\"mySlides\"/>
-				<h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "</h6>
+				<h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "<br>Tipul Evenimentului: " . $ifirst["filter"] . "</h6>
 				<p style=\"background-color:yellow;color:black;\">Eveniment Potential Incorect</p>
 				<h3>" . $ifirst["sesizari"] . "</h3>
 				<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
@@ -126,7 +126,7 @@ session_start();
 		} else {
 			
 			echo "<article class=\"mySlides\"/>
-				<h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "</h6>
+				<h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "<br>Tipul Evenimentului: " . $ifirst["filter"] . "</h6>
 				<p style=\"background-color:red;color:white;\">Eveniment Incorect</p>
 				<h3>" . $ifirst["sesizari"] . "</h3>
 				<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
@@ -139,7 +139,7 @@ session_start();
 		if ($ifirst["report"] <= 4) {
             
 			echo "<article class=\"mySlides\"/>
-				<h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "</h6>
+				<h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "<br>Tipul Evenimentului: " . $ifirst["filter"] . "</h6>
 				<p style=\"background-color:green;color:white;\">Eveniment de Incredere</p>
 				<h3>" . $ifirst["sesizari"] . "</h3>
 				<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
@@ -148,7 +148,7 @@ session_start();
 		} else if ($ifirst["report"] <= 9) {
 			
 			echo "<article class=\"mySlides\"/>
-				<h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "</h6>
+				<h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "<br>Tipul Evenimentului: " . $ifirst["filter"] . "</h6>
 				<p style=\"background-color:yellow;color:black;\">Eveniment Potential Incorect</p>
 				<h3>" . $ifirst["sesizari"] . "</h3>
 				<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
@@ -157,7 +157,7 @@ session_start();
 		} else {
 			
 			echo "<article class=\"mySlides\"/>
-				<h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "</h6>
+				<h6 id=\"autor\">Autor: " . $ifirst["nume"] . " " . $ifirst["prenume"] . "<br>Data: " . $ifirst["added"] . "<br>Numar Raportari: " . $ifirst["report"] . "<br>Tipul Evenimentului: " . $ifirst["filter"] . "</h6>
 				<p style=\"background-color:red;color:white;\">Eveniment Incorect</p>
 				<h3>" . $ifirst["sesizari"] . "</h3>
 				<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$ifirst["adresa"] ." </h4>
@@ -178,7 +178,7 @@ session_start();
 				if ($row["report"] <= 4) {
 				
 				echo "<article class=\"mySlides\" style=\"display:none;\">
-						<h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h6>
+						<h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "<br>Tipul Evenimentului: " . $row["filter"] . "</h6>
 						<p style=\"background-color:green;color:white;\">Eveniment de Incredere</p>
 						<h3>" . $row["sesizari"] . "</h3>
 						<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
@@ -188,7 +188,7 @@ session_start();
 				} else if ($row["report"] <= 9) {
 					
 					echo "<article class=\"mySlides\" style=\"display:none;\">
-						<h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h6>
+						<h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "<br>Tipul Evenimentului: " . $row["filter"] . "</h6>
 						<p style=\"background-color:yellow;color:black;\">Eveniment Potential Incorect</p>
 						<h3>" . $row["sesizari"] . "</h3>
 						<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
@@ -198,7 +198,7 @@ session_start();
 				} else {
 					
 					echo "<article class=\"mySlides\" style=\"display:none;\">
-						<h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h6>
+						<h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "<br>Tipul Evenimentului: " . $row["filter"] . "</h6>
 						<p style=\"background-color:red;color:white;\">Eveniment Incorect</p>
 						<h3>" . $row["sesizari"] . "</h3>
 						<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
@@ -211,7 +211,7 @@ session_start();
 				if ($row["report"] <= 4) {
                     
 					echo "<article class=\"mySlides\" style=\"display:none;\">
-						<h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h6>
+						<h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "<br>Tipul Evenimentului: " . $row["filter"] . "</h6>
 						<p style=\"background-color:green;color:white;\">Eveniment de Incredere</p>
 						<h3>" . $row["sesizari"] . "</h3>
 						<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
@@ -220,7 +220,7 @@ session_start();
 				} else if ($row["report"] <= 9) {
 					
 					echo "<article class=\"mySlides\" style=\"display:none;\">
-						<h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h6>
+						<h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "<br>Tipul Evenimentului: " . $row["filter"] . "</h6>
 						<p style=\"background-color:yellow;color:black;\">Eveniment Potential Incorect</p>
 						<h3>" . $row["sesizari"] . "</h3>
 						<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
@@ -229,7 +229,7 @@ session_start();
 				} else {
 					
 					echo "<article class=\"mySlides\" style=\"display:none;\">
-						<h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h6>
+						<h6 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "<br>Tipul Evenimentului: " . $row["filter"] . "</h6>
 						<p style=\"background-color:red;color:white;\">Eveniment Incorect</p>
 						<h3>" . $row["sesizari"] . "</h3>
 						<h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>

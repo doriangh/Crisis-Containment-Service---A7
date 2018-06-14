@@ -160,10 +160,10 @@ if(isset($_POST["submit"])) {
         mysqli_query ($db, $commit2);
         
         if($uploadOk == 0){
-        $sql = "INSERT INTO form (nume, prenume, adresa, sesizari, descriere, latitude, longitude,filter) VALUES ('$nume', '$prenume', '$data_arr[2]', '$sesizari', '$descriere',  '$data_arr[0]', '$data_arr[1]', '$categorie')";
+        $sql = "INSERT INTO form (nume, prenume, adresa, sesizari, descriere, latitude, longitude, filter) VALUES ('$nume', '$prenume', '$data_arr[2]', '$sesizari', '$descriere',  '$data_arr[0]', '$data_arr[1]', '$categorie')";
 		}
 		if($uploadOk == 1){
-        $sql = "INSERT INTO form (nume, prenume, adresa, sesizari, descriere, latitude, longitude,filter,Images) VALUES ('$nume', '$prenume', '$data_arr[2]', '$sesizari', '$descriere',  '$data_arr[0]', '$data_arr[1]', '$categorie','$numeImg')";
+        $sql = "INSERT INTO form (nume, prenume, adresa, sesizari, descriere, latitude, longitude, filter, Images) VALUES ('$nume', '$prenume', '$data_arr[2]', '$sesizari', '$descriere',  '$data_arr[0]', '$data_arr[1]', '$categorie','$numeImg')";
 		}
         mysqli_query ($db, $sql);
 

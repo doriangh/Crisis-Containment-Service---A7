@@ -9,15 +9,12 @@
   myUserEntity.Id = profile.getId();
   myUserEntity.Name = profile.getName();
   
-  //Store the entity object in sessionStorage where it will be accessible from all pages of your site.
   sessionStorage.setItem('myUserEntity',JSON.stringify(myUserEntity));
     
      var id = profile.getId();
     
     if (profile.getName()){
-//        document.getElementById('status').style.display = 'block';
-//        document.getElementById("status").innerHTML = profile.getName() + ' ' + id;
-        document.getElementById('titlu').innerHTML = "Buna, " + profile.getName();
+        document.getElementById('titlu').innerHTML = "Bună, " + profile.getName();
         document.getElementById('id').value = profile.getId();
         document.getElementById('name').value = profile.getName();
         document.getElementById("report").style.display = 'block';
@@ -31,9 +28,6 @@
         document.getElementById('signout').style.display = 'none';
         
     }
-    
-//  alert(profile.getName() + ', you can now report!');   
-    
 
 }
      

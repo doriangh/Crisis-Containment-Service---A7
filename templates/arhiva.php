@@ -66,17 +66,14 @@
 <form method="post" action="arhiva.php">
     <select name="values">
         <option value="">Selectati filtrul </option>
-        <option value="cutremure">Cutremure</option>
-        <option value="incendii">Incendii </option>
-        <option value="inundatii">Inundatii</option>
-        <option value="other">Other</option>
+        <option value="Cutremur">Cutremure</option>
+        <option value="Incendiu">Incendii </option>
+        <option value="Inundatii">Inundații</option>
+        <option value="Altceva">Altceva</option>
     </select>
     <input type="submit" name="submit" value="Cauta">
      
 <div class="articol">
-
-
-
 
 <?php
         
@@ -108,17 +105,17 @@ session_start();
 	  
 if(isset($_POST['submit']) && $currentpage==1)
         {
-          if($_POST['values'] == 'cutremure')
+          if($_POST['values'] == 'Cutremur')
           {
               $sql  = "SELECT * FROM form WHERE filter='cutremure' order by added desc";
           } 
-          elseif ($_POST['values'] == 'inundatii') {
+          elseif ($_POST['values'] == 'Inundatie') {
              $sql  = "SELECT * FROM form WHERE filter='inundatii' order by added desc";
          }
-          elseif ($_POST['values'] == 'incendii') {
+          elseif ($_POST['values'] == 'Incendiu') {
              $sql  = "SELECT * FROM form WHERE filter='incendii' order by added desc";
          }
-          elseif ($_POST['values']=='other'){
+          elseif ($_POST['values']=='Altceva'){
              $sql  = "SELECT * FROM form WHERE filter='other' order by added desc";
          }
           else{
@@ -176,10 +173,10 @@ if(isset($_GET['tip']) && $_GET['tip']!=".")
 		if($row["images"]){
            echo "<article class=\"mySlides\" style=\"display:block;\"><br>  
                     <HR WIDTH=98%; SIZE=10; COLOR=grey><br>
-                    <h5 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h5>
+                    <h5 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "<br>Tipul Evenimentului: " . $row["filter"] . "</h5>
                     <h3>" . $row["sesizari"] . "</h3>
                     <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
-					<img src=\"templates/uploads/" . $row["images"] . " \" style=\"width:100%;height:50%\" />
+					<img src=\"uploads/" . $row["images"] . " \" style=\"width:100%;height:50%\" />
                     <p>" . $row["descriere"] . " <br> " . $ind." </p> 
                   </article>";
             echo "<br>";
@@ -191,7 +188,7 @@ if(isset($_GET['tip']) && $_GET['tip']!=".")
 			{
 			echo "<article class=\"mySlides\" style=\"display:block;\"><br>  
                     <HR WIDTH=98%; SIZE=10; COLOR=grey><br>
-                    <h5 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "</h5>
+                    <h5 id=\"autor\">Autor: " . $row["nume"] . " " . $row["prenume"] . "<br>Data: " . $row["added"] .  "<br>Numar Raportari: " . $row["report"] . "<br>Tipul Evenimentului: " . $row["filter"] . "</h5>
                     <h3>" . $row["sesizari"] . "</h3>
                     <h4 style=\"padding: 0; font-size: 10px;\"> Locatie: " .$row["adresa"] ." </h4>
                     <p>" . $row["descriere"] . " <br> " . $ind." </p> 
