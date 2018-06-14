@@ -92,7 +92,7 @@ if(isset($_POST["submit"])) {
 		//$uploadOk = 0;
 	}
 	// Check file size
-	if ($_FILES["fileToUpload"]["size"] > 500000) {
+	if ($_FILES["fileToUpload"]["size"] > 50000000) {
 		echo "Sorry, your file is too large.";
 		$uploadOk = 0;
 	}
@@ -186,9 +186,6 @@ if(isset($_POST["submit"])) {
             $target_file = str_replace(" ", "+", $target_file);
             exec ("php -f {$fileName} {$nume} {$prenume} {$address} {$sesizari} {$descriere} {$target_file} > nul 2>&1 &");
         }
-
-        header ('Location: ../index.php');
-
         
         
     } else {
@@ -212,6 +209,9 @@ if(isset($_POST["submit"])) {
 			echo "File is not an image.";
 			$uploadOk = 0;
 		}
-	}
+	
+    }
+
+    header ('Location: ../index.php');
 
 ?>

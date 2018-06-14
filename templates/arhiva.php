@@ -68,7 +68,7 @@
         <option value="">Selectati filtrul </option>
         <option value="Cutremur">Cutremure</option>
         <option value="Incendiu">Incendii </option>
-        <option value="Inundatii">Inundații</option>
+        <option value="Inundatie">Inundații</option>
         <option value="Altceva">Altceva</option>
     </select>
     <input type="submit" name="submit" value="Cauta">
@@ -107,16 +107,16 @@ if(isset($_POST['submit']) && $currentpage==1)
         {
           if($_POST['values'] == 'Cutremur')
           {
-              $sql  = "SELECT * FROM form WHERE filter='cutremure' order by added desc";
+              $sql  = "SELECT * FROM form WHERE filter='Cutremur' order by added desc";
           } 
           elseif ($_POST['values'] == 'Inundatie') {
-             $sql  = "SELECT * FROM form WHERE filter='inundatii' order by added desc";
+             $sql  = "SELECT * FROM form WHERE filter='Inundatie' order by added desc";
          }
           elseif ($_POST['values'] == 'Incendiu') {
-             $sql  = "SELECT * FROM form WHERE filter='incendii' order by added desc";
+             $sql  = "SELECT * FROM form WHERE filter='Incendiu' order by added desc";
          }
           elseif ($_POST['values']=='Altceva'){
-             $sql  = "SELECT * FROM form WHERE filter='other' order by added desc";
+             $sql  = "SELECT * FROM form WHERE filter='Altceva' order by added desc";
          }
           else{
         $sql = " SELECT * from form";
@@ -197,21 +197,21 @@ if(isset($_GET['tip']) && $_GET['tip']!=".")
 		}
 	if(isset($_POST['submit']) && $currentpage==1)
         {
-          if($_POST['values'] == 'cutremure')
+          if($_POST['values'] == 'Cutremur')
           {
-              $sql  = "SELECT * FROM form WHERE filter='cutremure' order by added desc";
+              $sql  = "SELECT * FROM form WHERE filter='Cutremur' order by added desc";
 
           } 
-          elseif ($_POST['values'] == 'inundatii') {
-             $sql  = "SELECT * FROM form WHERE filter='inundatii' order by added desc";
+          elseif ($_POST['values'] == 'Inundatie') {
+             $sql  = "SELECT * FROM form WHERE filter='Inundatie' order by added desc";
 
          }
-          elseif ($_POST['values'] == 'incendii') {
-             $sql  = "SELECT * FROM form WHERE filter='incendii' order by added desc";
+          elseif ($_POST['values'] == 'Incendiu') {
+             $sql  = "SELECT * FROM form WHERE filter='Incendiu' order by added desc";
 
          }
-          elseif ($_POST['values']=='other'){
-             $sql  = "SELECT * FROM form WHERE filter='other' order by added desc";
+          elseif ($_POST['values']=='Altceva'){
+             $sql  = "SELECT * FROM form WHERE filter='Altceva' order by added desc";
 
          }
           else
